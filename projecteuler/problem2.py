@@ -8,14 +8,12 @@
 
 
 def memoize(func):
-    func.memo = {1: 1, 2: 1}
+    func.memo = {0: 0, 1: 1, 2: 1}
     return func
 
 
 @memoize
 def fib(n):
-    if n == 0:
-        return 0
     for i in range(3, n+1):
         fib.memo[i] = fib.memo[i-1] + fib.memo[i-2]
     return fib.memo[n]
