@@ -14,8 +14,10 @@ def memoize(func):
 
 @memoize
 def fib(n):
-    for i in range(3, n+1):
-        fib.memo[i] = fib.memo[i-1] + fib.memo[i-2]
+    if n < 3:
+        return fib.memo[n]
+
+    fib.memo[n] = fib.memo[n-1] + fib.memo[n-2]
     return fib.memo[n]
 
 
