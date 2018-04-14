@@ -1,3 +1,4 @@
+# https://projecteuler.net/problem=8
 from operator import mul
 import functools
 
