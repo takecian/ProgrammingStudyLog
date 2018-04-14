@@ -34,4 +34,4 @@ def calculate(maxvalue):
 
 
 res = calculate(4000000)
-print res
+print(res)
