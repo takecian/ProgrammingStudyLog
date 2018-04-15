@@ -1,6 +1,6 @@
 # https://projecteuler.net/problem=13
 
-data = open("input12.txt", "r")
+data = open("input13.txt", "r")
 
 lines = list(map(int, data.readlines()))
 
