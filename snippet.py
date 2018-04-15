@@ -25,7 +25,7 @@ for i in range(count):  # loop for each input
 def get_prime_factors(n):
     d = []
     i = 2
-    while i * i < n:
+    while i * i <= n:
         while n % i == 0:
             d.append(i)
             while n != i:
@@ -44,8 +44,9 @@ def get_divisors(n):
     while i * i <= n:
         if n % i == 0:
             d.append(i)
-            if i != n / i:
-                d.append(n / i)
+            q = int(n / i)
+            if i != q:
+                d.append(q)
         i += 1
     return d
 
