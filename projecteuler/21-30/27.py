@@ -30,14 +30,14 @@ def is_prime(n):
 
     i = 2
 
-    is_prime = True
+    yes_prime = True
     while i * i <= n:
         if n % i == 0:
-            is_prime = False
+            yes_prime = False
             break
         i += 1
 
-    return is_prime
+    return yes_prime
 
 
 p = get_prime_numbers(1001)
@@ -50,9 +50,7 @@ for b in p:
         n = 0
         while True:
             v = calc(n, a, b)
-            if is_prime(v):
-                # print(str(n) + ", " + str(a) + ", " + str(b) + ", ans = " + str(v) + ":" + str(is_prime(v)))
-            else:
+            if not is_prime(v):
                 break
             n += 1
 
