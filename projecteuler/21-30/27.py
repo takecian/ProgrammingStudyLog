@@ -30,14 +30,14 @@ def is_prime(n):
 
     i = 2
 
-    yes_prime = True
+    its_prime = True
     while i * i <= n:
         if n % i == 0:
-            yes_prime = False
+            its_prime = False
             break
         i += 1
 
-    return yes_prime
+    return its_prime
 
 
 p = get_prime_numbers(1001)
