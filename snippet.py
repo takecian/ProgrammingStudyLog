@@ -75,6 +75,13 @@ def is_prime(n):
     return its_prime
 
 
+# split integer to list
+
+def split_int(n):
+    return list(map(int, list(str(n))))
+
 #####################################################
+
+print(split_int(12345))
 
 print(is_prime(2))
