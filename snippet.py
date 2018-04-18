@@ -62,17 +62,13 @@ def is_prime(n):
     if n < 2:
         return False
 
-
     i = 2
-
-    its_prime = True
     while i * i <= n:
         if n % i == 0:
-            its_prime = False
-            break
+            return False
         i += 1
 
-    return its_prime
+    return True
 
 
 # split integer to list
