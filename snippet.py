@@ -27,18 +27,32 @@ def read_input():
 # calculate prime factors
 
 
-def get_prime_factors(n):
+def get_prime_factors_list(n):
     d = []
     i = 2
-    while i * i <= n:
+    while i <= n:
         while n % i == 0:
             d.append(i)
-            while n != i:
-                n /= i
+            n //= i
         i += 1
     return d
 
 
+def get_primes_dic(v):
+    m = {}
+    i = 2
+
+    while i <= v:
+        while v % i == 0:
+            if i in m:
+                m[i] += 1
+            else:
+                m[i] = 1
+            v //= i
+
+        i += 1
+
+    return m
 
 # calculate divisors
 
@@ -76,8 +90,18 @@ def is_prime(n):
 def split_int(n):
     return list(map(int, list(str(n))))
 
+
+def reverse_int(n):
+    return list(map(int, list(str(n))[::-1]))
+
+
 #####################################################
 
+print(get_prime_factors_list(2180))
+print(get_primes_dic(2180))
+
 print(split_int(12345))
+
+print(reverse_int(12345))
 
 print(is_prime(2))
