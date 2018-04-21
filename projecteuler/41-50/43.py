@@ -15,9 +15,9 @@ total = 0
 c1 = list(itertools.combinations(l,1));
 
 for p1 in c1:
-    l1 = list(l)
     d1 = p1[0]
 
+    l1 = list(l)
     l1.remove(p1[0])
     # print(p1[0])
     # print("len(l1) = " + str(len(l1)))
@@ -25,8 +25,9 @@ for p1 in c1:
     # d2, d3, d4
     c2 = list(itertools.permutations(l1, 3));
     for p2 in c2:
-        l2 = list(l1)
         d2, d3, d4 = p2[0], p2[1], p2[2]
+
+        l2 = list(l1)
         l2.remove(p2[0])
         l2.remove(p2[1])
         l2.remove(p2[2])
@@ -41,7 +42,6 @@ for p1 in c1:
             d5, d6, d7, d8, d9, d10 = p5[0], p5[1], p5[2], p5[3], p5[4], p5[5]
             # print(str(d5) + ", " + str(d6) + ", " + str(d7) + ", " + str(d8) + ", " + str(d9) + ", " + str(d10))
 
-            # fl = [1, 4, 0, 6, 3, 5, 7, 2, 8, 9]
             fl = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10]
             # print(fl)
             # print(three_digit(fl, 2))
