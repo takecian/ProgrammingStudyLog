@@ -95,6 +95,16 @@ def reverse_int(n):
     return list(map(int, list(str(n))[::-1]))
 
 
+# read
+def read_input1():
+    a, b, c, x, y = map(int, input().split())
+
+# read
+def inp(): return map(int, input().split())
+def read_input2():
+    n, s = inp()
+    l = [tuple(inp()) for _ in range(n)]
+
 #####################################################
 
 print(get_prime_factors_list(2180))
