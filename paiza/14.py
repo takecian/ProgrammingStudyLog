@@ -12,82 +12,64 @@ steps = []
 
 def calc(board, c, x, y):
     # check 8 directions
-    # check left
     target = 'W' if c == 'B' else 'B'
-    # print('target = ' + target)
     candidates = []
 
     # minus x
     minus_x = x - 1
     l_candidates = []
-    # print(board[minus_x][y])
     while minus_x >= 0 and board[minus_x][y] == target:
         l_candidates.append({'x': minus_x, 'y': y})
-        minus_x -= 1
-
-    # print(l_candidates)
+        minus_x -= 1ß
     if minus_x >= 0 and board[minus_x][y] == c:
         candidates.extend(l_candidates)
 
     # minus y
     minus_y = y - 1
     l_candidates = []
-    # print(board[x][minus_y])
     while minus_y >= 0 and board[x][minus_y] == target:
         l_candidates.append({'x': x, 'y': minus_y})
         minus_y -= 1
-
-    # print(l_candidates)
     if minus_y >= 0 and board[x][minus_y] == c:
         candidates.extend(l_candidates)
 
     # plus x
     plus_x = x + 1
     l_candidates = []
-    # print(board[plus_x][y])
     while plus_x < 8 and board[plus_x][y] == target:
         l_candidates.append({'x': plus_x, 'y': y})
         plus_x += 1
-
-    # print(l_candidates)
     if plus_x < 8 and board[plus_x][y] == c:
         candidates.extend(l_candidates)
 
     # plus y
     plus_y = y + 1
     l_candidates = []
-    # print(board[x][plus_y])
     while plus_y < 8 and board[x][plus_y] == target:
         l_candidates.append({'x': x, 'y': plus_y})
         plus_y += 1
-
-    # print(l_candidates)
     if plus_y < 8 and board[x][plus_y] == c:
         candidates.extend(l_candidates)
 
-    # miunus x  minus y
+    # minus x  minus y
     minus_y = y - 1
     minus_x = x - 1
     l_candidates = []
-    # print(board[minus_x][minus_y])
     while minus_x >= 0 and minus_y >= 0 and board[minus_x][minus_y] == target:
         l_candidates.append({'x': minus_x, 'y': minus_y})
         minus_x -= 1
         minus_y -= 1
-
     if minus_x >= 0 and minus_y >= 0 and board[minus_x][minus_y] == c:
         candidates.extend(l_candidates)
 
-    # miunus x  plus y
+    # minus x  plus y
     plus_y = y + 1
     minus_x = x - 1
     l_candidates = []
-    # print(board[minus_x][plus_y])
     while minus_x >= 0 and plus_y < 8 and board[minus_x][plus_y] == target:
         l_candidates.append({'x': minus_x, 'y': plus_y})
         minus_x -= 1
         plus_y += 1
-
     if minus_x >= 0 and plus_y < 8 and board[minus_x][plus_y] == c:
         candidates.extend(l_candidates)
 
@@ -95,12 +77,10 @@ def calc(board, c, x, y):
     minus_y = y - 1
     plus_x = x + 1
     l_candidates = []
-    # print(board[plus_x][minus_y])
     while plus_x < 8 and minus_y >= 0 and board[plus_x][minus_y] == target:
         l_candidates.append({'x': plus_x, 'y': minus_y})
         plus_x += 1
         minus_y -= 1
-
     if plus_x < 8 and minus_y >= 0 and board[plus_x][minus_y] == c:
         candidates.extend(l_candidates)
 
@@ -108,12 +88,10 @@ def calc(board, c, x, y):
     plus_y = y + 1
     plus_x = x + 1
     l_candidates = []
-    # print(board[minus_x][plus_y])
     while plus_x < 8 and plus_y < 8 and board[plus_x][plus_y] == target:
         l_candidates.append({'x': plus_x, 'y': plus_y})
         plus_x += 1
         plus_y += 1
-
     if plus_x < 8 and plus_y < 8 and board[plus_x][plus_y] == c:
         candidates.extend(l_candidates)
 
@@ -136,7 +114,6 @@ for i in range(count):
 
 # print(steps)
 # print(count)
-#
 
 pass_count = 0
 
@@ -157,10 +134,6 @@ for step in steps:
 
     if pass_count > 1:
         break # game finish
-
-# for b in board:
-#     print(b)
-
 
 white_count = 0
 black_count = 0
