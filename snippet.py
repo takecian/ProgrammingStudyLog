@@ -84,6 +84,12 @@ def is_prime(n):
 
     return True
 
+# Format
+
+def f(n):
+    number = 50
+    number_padded = '%04d' % number
+    print(number_padded)
 
 # split integer to list
 
