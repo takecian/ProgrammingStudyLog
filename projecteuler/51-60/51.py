@@ -6,6 +6,8 @@ import functools
 
 def is_prime(n):
     if 2 > n: return False
+    if 2 == n: return True
+    if n % 2 == 0: return False
     i = 2
     while i * i <= n:
         if n % i == 0:
@@ -28,6 +30,8 @@ for digit in range(2, 10):
                     test_val_list = list(val_list)
                     test_li = list(li)
                     # print("comb = " + str(comb) + ", li = " +str(test_val_list))
+                    if digit - 1 in comb:
+                        break
                     for v in range(digit):
                         if v in comb:
                             test_li[v] = i
