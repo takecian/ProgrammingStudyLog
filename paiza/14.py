@@ -20,7 +20,7 @@ def calc(board, c, x, y):
     l_candidates = []
     while minus_x >= 0 and board[minus_x][y] == target:
         l_candidates.append({'x': minus_x, 'y': y})
-        minus_x -= 1s
+        minus_x -= 1
     if minus_x >= 0 and board[minus_x][y] == c:
         candidates.extend(l_candidates)
 
