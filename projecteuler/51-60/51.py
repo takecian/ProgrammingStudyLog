@@ -14,43 +14,34 @@ def is_prime(n):
     return True
 
 
-for digit in range(2, 5):
+for digit in range(2, 10):
     li = [0] * digit
     print("digit = " + str(digit) + ", " + str(li))
     for p in range(1, digit):
         for comb in itertools.combinations(list(range(digit)), p):
-            for i in range(1, 10):
-                test_li = list(li)
-                for v in comb:
-                    test_li[v] = i
-                v_dig = digit - p
-                for i in range(10**v_dig):
+            v_dig = digit - p
+            for raw_val in range(10 ** v_dig):
+                val_list = list(map(int, list(str(raw_val).zfill(v_dig))))
 
-                print("replace = " + str(comb) + ", li = " + str(test_li) + ", vdig = " + str(v_dig))
+                candidates = []
+                for i in range(0, 10):
+                    test_val_list = list(val_list)
+                    test_li = list(li)
+                    # print("comb = " + str(comb) + ", li = " +str(test_val_list))
+                    for v in range(digit):
+                        if v in comb:
+                            test_li[v] = i
+                        else:
+                            test_li[v] = test_val_list[0]
+                            del test_val_list[0]
+                    # print(test_li)
 
+                    # print("replace = " + str(comb) + ", li = " + str(test_li) + ", vdig = " + str(v_dig) + ", i = " + str(i))
+                    target = functools.reduce(lambda x, y: x * 10 + y, test_li)
+                    # print(target)
+                    if is_prime(target) and len(str(target)) == digit:
+                        candidates.append(target)
 
-# for i in range(56003, 100000):
-#     # i = 56003
-#     dig = len(str(i))
-#
-#     for p in range(1, dig):
-#         for comb in itertools.combinations(list(range(dig)), p):
-#             # print("replace = " + str(comb))
-#             int_li = list(map(int, list(str(i))))
-#             candidate = 0
-#             prime_num = 0
-#             for r in range(10):
-#                 temp_int_li = list(int_li)
-#                 for v in comb:
-#                     temp_int_li[v] = r
-#                 candidate = functools.reduce(lambda x, y: x * 10 + y, temp_int_li)
-#                 if len(str(i)) != len(str(candidate)):
-#                     continue
-#                 if is_prime(candidate):
-#                     # print("candidate is prime = " + str(candidate))
-#                     prime_num += 1
-#                 # else:
-#                 #     print("candidate = " + str(candidate))
-#                 if prime_num == 8:
-#                     print("find! = " + str(i))
-#                     exit(0)
+                if len(candidates) == 8:
+                    print("prime = " + str(len(candidates)) + ", comb = " + str(comb) + ", val_list = " + str(val_list) + ", cand = " + str(candidates))
+                    exit(0)
