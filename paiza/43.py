@@ -3,7 +3,6 @@
 import re
 import string
 
-inp = list(input())
 
 lowerReg = re.compile(r'^[a-z]+$')
 
@@ -48,6 +47,7 @@ def parse(l):
     return res
 
 
+inp = list(input())
 ans = parse(inp)
 
 for c in list(string.ascii_lowercase):
