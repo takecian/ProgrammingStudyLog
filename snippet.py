@@ -2,6 +2,8 @@
 # create sample data
 
 import random
+import math
+
 
 def random_data():
     n = 10**1
@@ -83,6 +85,12 @@ def is_prime(n):
         i += 1
 
     return True
+
+
+# Caculate count of combination
+def combinations_count(n, r):
+    return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))
+
 
 # Format
 
