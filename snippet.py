@@ -75,8 +75,9 @@ def get_divisors(n):
 # Check wheather n is prime or not
 
 def is_prime(n):
-    if n < 2:
-        return False
+    if n < 2: return False
+    if n == 2: return True
+    if n % 2 == 0: return False
 
     i = 2
     while i * i <= n:
@@ -87,7 +88,7 @@ def is_prime(n):
     return True
 
 
-# Caculate count of combination
+# Calculate count of combination
 def combinations_count(n, r):
     return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))
 
@@ -99,8 +100,8 @@ def f(n):
     number_padded = '%04d' % number
     print(number_padded)
 
-# split integer to list
 
+# split integer to list
 def split_int(n):
     return list(map(int, list(str(n))))
 
@@ -113,8 +114,10 @@ def reverse_int(n):
 def read_input1():
     a, b, c, x, y = map(int, input().split())
 
-# read
+
 def inp(): return map(int, input().split())
+
+
 def read_input2():
     n, s = inp()
     l = [tuple(inp()) for _ in range(n)]
