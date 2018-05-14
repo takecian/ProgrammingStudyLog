@@ -112,7 +112,7 @@ def reverse_int(n):
 
 # read
 def read_input1():
-    a, b, c, x, y = map(int, input().split())
+    a, b, c, x, y = c
 
 
 def inp(): return map(int, input().split())
