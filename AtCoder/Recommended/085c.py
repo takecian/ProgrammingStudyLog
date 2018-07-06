@@ -4,15 +4,23 @@ N, Y = map(int, input().split())
 
 
 def solve(n, y):
-    for a in range(N + 1):
+    for a in range(n + 1):
         rest = y - 10000 * a
-        if rest == 0:
-            return (a, 0, 0)
+        if rest < 0:
+            break
+        if rest == 0 and a == n:
+            return a, 0, 0
+
         bc = n - a
-        cand_b = rest // 1000
+        all_c = 1000 * bc
+        rest = rest - all_c
+        if rest >= 0 and rest % 4000 == 0:
+            b = rest // 4000
+            c = bc - b
+            if b >= 0 and c >= 0:
+                return a, b, c
 
-
-    return (-1, -1, -1)
+    return -1, -1, -1
 
 
 result = solve(N, Y)
