@@ -6,10 +6,14 @@
 * http://atcoder.jp/
 * https://paiza.jp/challenges
 
-## Snippet
+### Snippet
 
 [A collection of useful methods](./snippet.py) for competitive programming.
 
-## Knowledge
+### Knowledge
 
-1 秒間で処理できる for 文ループの回数は、108=100,000,000108=100,000,000 回程度
+1 秒間で処理できる for 文ループの回数は、10^8=100,000,000 回程度
+
+## Language
+
+* Haskell
