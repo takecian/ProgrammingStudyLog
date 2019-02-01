@@ -18,3 +18,10 @@
 ## Language
 
 * Haskell
+
+## Pattern
+
+### List
+
+* Reverse させたら簡単に解けないか
+* 2つポインタ持たせて不要なループを減らせないか
