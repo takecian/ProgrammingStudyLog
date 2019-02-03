@@ -17,11 +17,20 @@ class Solution:
         table["8"] = ["t", "u", "v"]
         table["9"] = ["w", "x", "y", "z"]
 
-        answer = []
+        answers = []
 
-        print(table)
+        for d in digits:
+            new_answers = []
+            if len(answers) > 0:
+                for a in answers:
+                    for c in table[d]:
+                        new_answers.append(a + c)
+                answers = new_answers
+            else:
+                answers = table[d]
+        # print(table)
 
-        return answer
+        return answers
 
 
 s = Solution()
