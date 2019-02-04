@@ -7,7 +7,7 @@ answer = 0
 for i in range(1 << (len(S)-1)):
     expression = []
     for j in range(len(S)):
-        if ((i >> j) & 1) == 1:
+        if (i >> j) & 1:
             expression.append("{}+".format(S[j]))
         else:
             expression.append(S[j])
