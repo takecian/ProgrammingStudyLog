@@ -16,16 +16,36 @@ for a in A:
 mask = list(map(lambda x: 0 if x >= N / 2 else 1, all_sum))
 # print(mask)
 
-k = list(map(int, list(format(K, '047b'))))
-# print(k)
+max_k = list(map(int, list(format(K, '047b'))))
+# print(max_k)
 
-answer_k_list = []
-for e, ma in zip(mask, k):
-    answer_k_list.append(1 if e and ma else 0)
+idx = max_k.index(1)
+next_k = []
+for i in range(len(max_k)):
+    if i < idx:
+        next_k.append(max_k[i])
+    elif i == idx:
+        next_k.append(0)
+    else:
+        next_k.append(1)
+# print(next_k)
 
-# print(answer_k_list)
-answer_k = int("".join(map(str, answer_k_list)), 2)
-print(answer_k)
+
+def run_mask(msk, kk):
+    k_list = []
+    for e, ma in zip(mask, max_k):
+        k_list.append(1 if e and ma else 0)
+
+    # print(answer_k_list)
+    answer_k = int("".join(map(str, k_list)), 2)
+    # print(answer_k)
+    return answer_k
+
+
+k1 = run_mask(mask, max_k)
+k2 = run_mask(mask, next_k)
+
+answer_k = k1 if k1 > k2 else k2
 
 result = 0
 for a in A:
