@@ -4,7 +4,7 @@
 
 各contestの問題
 
-## 
+## その他問題集
 
 |Directory|URL|Memo|
 |:--|:--|:--|
