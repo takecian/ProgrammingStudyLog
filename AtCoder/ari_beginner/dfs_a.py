@@ -20,11 +20,7 @@ def dfs(h, w):
     if C[h][w] == "g":
         return True
 
-    tmp1 = dfs(h - 1, w)
-    tmp2 = dfs(h + 1, w)
-    tmp3 = dfs(h, w - 1)
-    tmp4 = dfs(h, w + 1)
-    return tmp1 or tmp2 or tmp3 or tmp4
+    return dfs(h - 1, w) or dfs(h + 1, w) or dfs(h, w - 1) or dfs(h, w + 1)
 
 
 for h in range(H):
