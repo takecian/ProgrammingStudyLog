@@ -34,6 +34,13 @@
 ### Grid
 
 * グリッドと二次元配列で x y の順番が直感と異なるので注意
+* DFS(depth-first search)
+* BFS(breath-first search)
+* 周辺を走査する時は配列作るといい
+```
+    dxs = [1, 0, -1, 0]
+    dys = [0, 1, 0, -1]
+```
 
 ### Loop(find value)
 
