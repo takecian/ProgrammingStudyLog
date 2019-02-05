@@ -2,7 +2,7 @@
 
 
 class Solution:
-    def isMatch(self, s: 'str', p: 'str') -> 'bool':
+    def isMatch(self, s, p):
         if len(p) == 0:
             return len(s) == 0
 
