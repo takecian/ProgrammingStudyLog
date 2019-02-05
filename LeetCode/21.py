@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/
 
 class Solution:
-    def mergeTwoLists(self, l1: 'ListNode', l2: 'ListNode') -> 'ListNode':
+    def mergeTwoLists(self, l1, l2):
         head = ListNode(0)
         head1 = l1
         head2 = l2
