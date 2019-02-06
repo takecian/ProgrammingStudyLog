@@ -43,9 +43,6 @@ def bfs(s, g):
                 elif C[next_y][next_x] == "g":
                     return "YES"
 
-    # for i in range(3):
-    #     if d[g[0]][g[1]][i] != -1:
-    #         return "YES"
     return "NO"
 
 
