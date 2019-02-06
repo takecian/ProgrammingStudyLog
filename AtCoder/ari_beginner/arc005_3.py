@@ -38,13 +38,15 @@ def bfs(s, g):
                 if C[next_y][next_x] == "#" and current[2] < 2:
                     que.append((next_y, next_x, current[2] + 1))
                     d[next_y][next_x][current[2] + 1] = d[current[0]][current[1]][current[2]] + 1
-                elif C[next_y][next_x] != "#":
+                elif C[next_y][next_x] == ".":
                     que.append((next_y, next_x, current[2]))
                     d[next_y][next_x][current[2]] = d[current[0]][current[1]][current[2]] + 1
+                elif C[next_y][next_x] == "g":
+                    return "YES"
 
-    for i in range(3):
-        if d[g[0]][g[1]][i] != -1:
-            return "YES"
+    # for i in range(3):
+    #     if d[g[0]][g[1]][i] != -1:
+    #         return "YES"
     return "NO"
 
 
