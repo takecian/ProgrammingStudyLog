@@ -34,12 +34,16 @@
 ### Grid
 
 * グリッドと二次元配列で x y の順番が直感と異なるので注意
-* DFS(depth-first search)
-* BFS(breath-first search)
+* たどり着けるかどうか
+  * DFS(depth-first search)
+* 最短経路
+  * BFS(breath-first search)
 * 周辺を走査する時は配列作るといい
 ```
     dxs = [1, 0, -1, 0]
     dys = [0, 1, 0, -1]
+    for dy, dx in zip(dxs, dys):
+       xxx
 ```
 
 ### Loop(find value)
@@ -49,8 +53,14 @@
 
 ### DP(動的計画法)
 
-  
+### 貪欲法
+* 大きい方(小さい方)から入る分だけ詰めてみる
+
 ### 全組み合わせチェック
 * Bit 全探索で解けるか考える
   * O(2**n) なのでできれば避けたい
-  
+* DFS
+* BFS
+
+### 回文・辞書式順序
+* 文字列を reverse してみる  
