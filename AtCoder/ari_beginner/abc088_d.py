@@ -26,9 +26,7 @@ while len(queue) > 0:
 
 count = 0
 for l in s:
-    for c in l:
-        if c == ".":
-            count += 1
+    count += l.count(".")
 
 if d[H-1][W-1] == -1:
     print(-1)
