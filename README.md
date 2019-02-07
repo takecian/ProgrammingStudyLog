@@ -73,3 +73,7 @@
 ### 区間スケジューリング問題
 * 終端(最後の位置)でソートしてそれを基準に選ぶ
 
+### Linkedlist
+* head の前に Dummy node を作って `dummy.next = head` を使うと便利
+  * `while cursor` みたいな感じで走査していく
+  
