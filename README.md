@@ -50,7 +50,9 @@
 直接計算すると大きな時間がかかってしまう問題に対し、途中の計算結果をうまく再利用することで計算効率を上げる手法のこと。
 * ナップサック問題
 * 最長共通部分列問題
-
+  * Longest Common Subsequense
+* 最長増加部分列
+  * LIS : Longest Increasing Subsequense
 
 ### 貪欲法
 何か優先順位をつけて、その順番で処理していく
@@ -80,8 +82,5 @@
 * head の前に Dummy node を作って `dummy.next = head` を使うと便利
   * `while cursor` みたいな感じで走査していく
   
-### 最長増加部分列
-
-LIS : Longest Increasing Subsequense
 
   
