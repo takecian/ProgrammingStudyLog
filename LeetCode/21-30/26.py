@@ -1,7 +1,7 @@
 import sys
 
 class Solution:
-    def removeDuplicates(self, nums: 'List[int]') -> 'int':
+    def removeDuplicates(self, nums):
         i = 0
         p = -123
         while i < len(nums):
