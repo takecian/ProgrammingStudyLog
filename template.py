@@ -13,3 +13,5 @@ for dx, dy in zip(dx8, dy8):
     break
 
 
+# big value
+INF = int(1e15)
