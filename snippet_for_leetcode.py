@@ -90,6 +90,7 @@ def is_prime(n):
 
 # Calculate count of combination
 def combinations_count(n, r):
+    import math
     return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))
 
 
