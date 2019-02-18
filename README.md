@@ -9,7 +9,7 @@
 
 ### Snippet
 
-[A collection of useful methods](./snippet.py) for competitive programming.
+[A collection of useful methods](snippet_for_leetcode.py) for competitive programming.
 
 ### Knowledge
 

@@ -1,4 +1,4 @@
-
+# グリッド操作
 dx4 = [0, 0, 1, -1]
 dy4 = [1, -1, 0, 0]
 
@@ -17,7 +17,7 @@ for dx, dy in zip(dx8, dy8):
 INF = int(1e15)
 
 
-# エラトステネスの篩
+# エラトステネスの篩: n 以下の数字うち、素数のリスト
 def primes(n):
     is_prime = [True] * (n + 1)
     is_prime[0] = False
@@ -30,3 +30,19 @@ def primes(n):
     return [i for i in range(n + 1) if is_prime[i]]
 
 print(primes(100))
+
+
+# ソート済みの配列からの二分探索で Longest Increase Subsequence を作る
+def LIS(L):
+    from bisect import bisect
+    seq = []
+    for i in L:
+        pos = bisect(seq,i)
+    if len(seq)<=pos:
+        seq.append(i)
+    else:
+        seq[pos] = i
+    return len(seq)
+
+# 一つの要素と残りのリストを作る時の読み込み
+K, *A = list(map(int, input().split()))
