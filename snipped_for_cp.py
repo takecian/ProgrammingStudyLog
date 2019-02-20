@@ -49,7 +49,7 @@ K, *A = list(map(int, input().split()))
 
 
 # 素因数分解
-def get_prime_dic(n):
+def prime_dic(n):
     dic = {}
 
     i = 2
