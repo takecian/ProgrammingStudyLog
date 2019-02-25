@@ -1,14 +1,16 @@
 # https://atcoder.jp/contests/abc119/tasks/abc119_c
 import copy
+import itertools
 
+
+# 長さ t の竹を L から少ないコストで作る方法を探す
 def solve(t, l, c):
-    # 長さ t の竹を L から少ないコストで作る方法を探す
     min_cost = 100000
     cand = []
 
-    ptn = 1 << len(l)
-    # print(l)
-    # print("ptn = {}".format(ptn))
+
+    # 全組み合わせを考えて一番コストの低いものを使う
+    ptn = 1 << len(l)  # Bit 全探索
     for i in range(1, ptn):
         answers = []
         for j in range(0, len(l)):
@@ -31,23 +33,23 @@ def main():
     L.sort()
 
     answer = 1000000
-    for targets in [[A, B, C], [A, C, B], [B, A, C], [B, C, A], [C, B, A], [C, A, B]]:
+    for targets in itertools.permutations([A, B, C]):
         is_done = [False] * 3
         L2 = copy.copy(L)
         total_cost = 0
+
+        # 同じ長さの竹があったら使う
         for i in range(len(targets)):
             if targets[i] in L2:
                 del L2[L2.index(targets[i])]
                 is_done[i] = True
 
+        # 同じ長さの竹がない場合
         for i in range(3):
             if is_done[i]:
                 continue
 
-            # i の竹を L から少ないコストで作る方法を探す
-            # print("try target = {}".format(targets[i]))
             cost, L2 = solve(targets[i], L2, 0)
-            # print("cost = {}".format(cost))
             total_cost += cost
 
         answer = min(answer, total_cost)
