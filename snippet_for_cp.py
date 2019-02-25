@@ -107,3 +107,19 @@ class UnionFind():
                 self.table[s1] += -1
                 self.table[s2] = s1
         return
+
+# Bit 全探索
+l = []  # list
+pattern = 1 << len(l)  # 1 をリストの長さだけ左にシフトする
+for i in range(pattern):
+    answers = []
+    for j in range(len(l)):
+        if (i >> j) & 1:
+            answers.append(l[j])
+
+
+# 直積
+import itertools
+for st, tt in itertools.product([0, 1], ["1", "2"]):
+    print(st)
+    print(tt)
