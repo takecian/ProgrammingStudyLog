@@ -112,10 +112,10 @@ class UnionFind():
 l = []  # list
 pattern = 1 << len(l)  # 1 をリストの長さだけ左にシフトする
 for i in range(pattern):
-    answers = []
+    scope = []
     for j in range(len(l)):
         if (i >> j) & 1:
-            answers.append(l[j])
+            scope.append(l[j])
 
 
 # 直積
