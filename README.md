@@ -11,7 +11,16 @@
 
 [A collection of useful methods](snippet_for_leetcode.py) for competitive programming.
 
-### Knowledge
+## Knowledge
+
+|テストケース|Order|メモ|
+|:--|:--|:--|
+|10^6以上|O(N)かO(N log N)|二部探索とか考える|
+|3000|N^2||
+|500|N^3||
+|100|N^3||
+|50|N^5||
+|20|2^N||
 
 1 秒間で処理できる for 文ループの回数は、10^8=100,000,000 回程度
 
