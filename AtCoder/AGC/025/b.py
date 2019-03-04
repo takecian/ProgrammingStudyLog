@@ -2,6 +2,8 @@
 
 
 def main():
+    mod = 998244353
+
     N, A, B, K = map(int, input().split())
 
     if K == 0:
@@ -19,7 +21,7 @@ def main():
         if n < 0:  # これ以上はやる意味ない
             break
         if n % B == 0:
-            ans += (combi_cache[a] * combi_cache[n // B]) % 998244353
+            ans += (combi_cache[a] * combi_cache[n // B]) % mod
 
     print(ans)
 
