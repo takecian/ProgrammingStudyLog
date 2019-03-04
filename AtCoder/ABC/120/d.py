@@ -57,13 +57,10 @@ def main():
     for j in range(len(bridges)-1, 0, -1):
         br = bridges[j]
 
-        if uf.find(br[0]) == uf.find(br[1]):  # もともと繋がってる
-            answers.insert(0, fuben)
-        else:  # 新しく繋がる
-            b1 = uf.size(br[0])
-            b2 = uf.size(br[1])
-            fuben = fuben - b1 * b2
-            answers.insert(0, fuben)
+        if uf.find(br[0]) != uf.find(br[1]):  # 新しく繋がってる
+            fuben -= (uf.size(br[0]) * uf.size(br[1]))
+
+        answers.insert(0, fuben)
 
         uf.union(br[0], br[1])
 
@@ -72,7 +69,7 @@ def main():
     for a in answers:
         print(a)
 
-        # 最後
+    # 最後
     print(N * (N-1) // 2)
 
 
