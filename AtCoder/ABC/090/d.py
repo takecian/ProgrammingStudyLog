@@ -14,6 +14,10 @@ def main():
         tmp = p * (b - K) + max(0, r - K + 1)
         # print("b = {}, c = {}, p = {}, tmp = {}".format(b, b - K, p, tmp))
         ans += tmp
+
+    if K == 0:
+        ans -= N
+
     print(ans)
 
 
