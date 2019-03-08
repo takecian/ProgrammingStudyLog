@@ -11,12 +11,11 @@ def main():
     for b in range(K+1, N+1):
         p = N // b
         r = N - b * p
-        tmp = p * (b - K) + max(0, r - K + 1)
-        # print("b = {}, c = {}, p = {}, tmp = {}".format(b, b - K, p, tmp))
-        ans += tmp
 
-    if K == 0:
-        ans -= N
+        rest = max(0, r - K + 1) if K != 0 else max(0, r - K)
+        tmp_ans = p * (b - K) + rest  # 該当する部分をまとめて計算する
+        # print("b = {}, c = {}, p = {}, tmp = {}".format(b, b - K, p, tmp))
+        ans += tmp_ans
 
     print(ans)
 
