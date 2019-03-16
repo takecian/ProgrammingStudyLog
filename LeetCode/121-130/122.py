@@ -9,10 +9,10 @@ input = sys.stdin.readline
 
 class Solution:
     def maxProfit(self, prices):
-        # big value
+        INF = int(1e15)
+
         prices.append(-1)
 
-        INF = int(1e15)
         ans = 0
         buy_p = INF
         sell_p = -1
