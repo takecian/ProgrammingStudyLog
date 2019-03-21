@@ -1,4 +1,4 @@
-# https://atcoder.jp/contests/abc080/tasks/abc080_b
+# https://atcoder.jp/contests/abc079/tasks/abc079_b
 
 import itertools
 import collections
@@ -6,8 +6,14 @@ import bisect
 
 def main():
     N = int(input())
-    s = sum(map(int, list(str(N))))
-    print("Yes" if N % s == 0 else "No")
+
+    L = [0] * 90
+    L[0] = 2
+    L[1] = 1
+    for i in range(2, 87):
+        L[i] = L[i-1] + L[i-2]
+    print(L[N])
+
 
 if __name__ == '__main__':
     main()
