@@ -15,9 +15,10 @@ def main():
 
     ans = 0
 
+    # B を軸に考える
     for b in B:
-        i = bisect.bisect_left(A, b)
-        j = bisect.bisect_right(C, b)
+        i = bisect.bisect_left(A, b)  # b より小さいものがいくつあるか
+        j = bisect.bisect_right(C, b) # b より大きいものがいくつあるか
 
         ans += i * (N - j)
 
