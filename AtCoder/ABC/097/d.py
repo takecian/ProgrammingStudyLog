@@ -8,7 +8,7 @@ import bisect
 # Union find
 class UnionFind():
     def __init__(self,size):
-        self.table = [-1 for _  in range(size)]  # 負の値の場合根を表す。絶対値はツリーの高さ 正の値は次の要素を返す、根まで続く
+        self.table = [-1 for _  in range(size)]  # 負の値の場合根を表す。正の値は次の要素を返す、根まで続く
         self.size = [1 for _  in range(size)]
 
     #集合の代表を求める
