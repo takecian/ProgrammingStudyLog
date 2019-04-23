@@ -1,73 +1,65 @@
-def is_sorted(l):
-    for i in range(len(l)):
-        if l[i] != i + 1:
-            return False
-    return True
+# https://atcoder.jp/contests/abc097/tasks/arc097_b
 
+import itertools
+from collections import Counter
+from collections import defaultdict
+import bisect
 
-def can_go(start, goal, sw, d):
-    if d > M: return False
-    if start == goal: return True
+# Union find
+class UnionFind():
+    def __init__(self,size):
+        self.table = [-1 for _  in range(size)]  # 負の値の場合根を表す。絶対値はツリーの高さ 正の値は次の要素を返す、根まで続く
+        self.size = [1 for _  in range(size)]
 
-    for s in sw:
-        if s[0] == start:
-            if can_go(s[1], goal, sw, d + 1):
-                return True
-        elif s[1] == start:
-            if can_go(s[0], goal, sw, d + 1):
-                return True
-    return False
+    #集合の代表を求める
+    def find(self,x):
+        while self.table[x] >= 0:
+            #根に来た時,self.table[根のindex]は負の値なのでx = 根のindexで値が返される。
+            x = self.table[x]
+        return x
 
+    def is_same(self, x, y):
+        return self.find(x) == self.find(y)
 
-def try_s(l, sw):
-    maps = swap_map(sw)
-    count = 0
-    for idx, c in enumerate(l):
-        if idx == c:
-            count += 1
-            continue
-        if can_go(idx, c, sw, 0):
-            # print(str(c) + ' can go home')
-            count += 1
-    print(count)
-
-
-def swap_map(sw):
-    maps = {}
-    for i in range(M):
-        for s in sw:
-            if s[0] == i:
-                if i not in maps:
-                    maps[i] = [s[1]]
+    #併合
+    def union(self,x,y):
+        s1 = self.find(x)#根のindex,table[s1]がグラフの高さ
+        s2 = self.find(y)
+        if s1 != s2:#根が異なる場合
+            if self.table[s1] != self.table[s2]:#グラフの高さが異なる場合
+                if self.table[s1] < self.table[s2]:
+                    self.table[s2] = s1
+                    self.size[s1] += self.size[s2]
                 else:
-                    maps[i].append(s[1])
-            if s[1] == i:
-                if i not in maps:
-                    maps[i] = [s[0]]
-                else:
-                    maps[i].append(s[0])
-    for m in maps:
-        for r in m:
+                    self.table[s1] = s2
+                    self.size[s2] += self.size[s1]
+            else:
+                #グラフの長さが同じ場合,どちらを根にしても変わらない
+                #その際,グラフが1長くなることを考慮する
+                self.table[s1] += -1
+                self.table[s2] = s1
+                self.size[s1] += self.size[s2]
+        return
 
-    return maps
-
-
-N, M = map(int, input().split())
-p = list(map(int, input().split()))
-
-swaps = []
-for i in range(M):
-    x, y = map(int, input().split())
-    swaps.append((x-1, y-1))
+    def group_size(self, x):
+        return self.size[self.find(x)]
 
 
-p = list(map(lambda x: x - 1, p))
-# print(p)
-# print(swaps)
+def main():
+    N, M = map(int, input().split())
+    P = list(map(int, input().split()))
+
+    uf = UnionFind(N+1)
+    for _ in range(M):
+        a, b = map(int, input().split())
+        uf.union(a, b)
+
+    ans = 0
+    for i in range(N):
+        if uf.is_same(i + 1, P[i]):
+            ans += 1
+    print(ans)
 
 
-if is_sorted(p):
-    print(len(p))
-else:
-    print()
-    # try_s(p, swaps)
+if __name__ == '__main__':
+    main()
