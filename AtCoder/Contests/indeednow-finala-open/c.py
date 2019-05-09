@@ -7,7 +7,7 @@ def main():
 
     dp_tlc = [[[0 for _ in range(101)] for _ in range(101)] for _ in range(101)]
 
-    # abcw = [list(map(int, input().split())) for _ in range(N)]
+    # abcw = [linked_list(map(int, input().split())) for _ in range(N)]
     for _ in range(N):
         a, b, c, w = map(int, input().split())
         dp_tlc[a][b][c] = max(dp_tlc[a][b][c], w)

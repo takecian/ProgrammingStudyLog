@@ -25,8 +25,8 @@ for i, v in enumerate(p):
 # usi = p[len(p)//2:]
 
 
-# mi = min(list(filter(lambda x: x > len(p)//2, mae)))
-# ma = max(list(filter(lambda x: x <= len(p)//2, usi)))
+# mi = min(linked_list(filter(lambda x: x > len(p)//2, mae)))
+# ma = max(linked_list(filter(lambda x: x <= len(p)//2, usi)))
 
 print(top)
 print(last)

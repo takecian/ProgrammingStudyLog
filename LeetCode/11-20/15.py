@@ -40,7 +40,7 @@ print(s.threeSum([-1, 0, 1, 2, -1, -4]))
 #         :rtype: List[List[int]]
 #         """
 #         answers = []
-#         for l in list(itertools.combinations(nums, 3)):
+#         for l in linked_list(itertools.combinations(nums, 3)):
 #             if sum(l) == 0:
 #                 l = tuple(sorted(l))
 #                 if l not in answers:

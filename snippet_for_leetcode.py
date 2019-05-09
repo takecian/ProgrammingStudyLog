@@ -102,7 +102,7 @@ def f(n):
     print(number_padded)
 
 
-# split integer to list
+# split integer to linked_list
 def split_int(n):
     return list(map(int, list(str(n))))
 

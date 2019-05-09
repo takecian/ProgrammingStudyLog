@@ -118,7 +118,7 @@ class UnionFind():
 
 
 # Bit 全探索
-l = []  # list
+l = []  # linked_list
 pattern = 1 << len(l)  # 1 をリストの長さだけ左にシフトする
 for i in range(pattern):
     scope = []

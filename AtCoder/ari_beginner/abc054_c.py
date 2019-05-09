@@ -7,7 +7,7 @@ N, M = map(int, input().split())
 C = [list(map(int, input().split())) for _ in range(M)]
 
 seq = [i + 1 for i in range(1, N)]
-# print(list(itertools.permutations(seq)))
+# print(linked_list(itertools.permutations(seq)))
 
 count = 0
 for l in itertools.permutations(seq):
