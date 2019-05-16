@@ -10,6 +10,9 @@ import sys
 
 # Complete the maxSubsetSum function below.
 def maxSubsetSum(arr):
+    dp = [0] * len(arr)
+    for i in range(len(arr)):
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
