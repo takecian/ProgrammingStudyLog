@@ -10,12 +10,16 @@ import sys
 
 # Complete the maxSubsetSum function below.
 def maxSubsetSum(arr):
-    dp = [0] * len(arr)
-    for i in range(len(arr)):
+    length = len(arr) + 2
+    dp = [0] * length
+    for i in range(2, length):
+        print(i)
+        dp[i] = max(dp[i-1], dp[i-2], dp[i-2] + arr[i-2])
+
+    return max(dp[-2], dp[-1])
 
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input())
 
@@ -23,6 +27,4 @@ if __name__ == '__main__':
 
     res = maxSubsetSum(arr)
 
-    fptr.write(str(res) + '\n')
-
-    fptr.close()
+    print(res)
