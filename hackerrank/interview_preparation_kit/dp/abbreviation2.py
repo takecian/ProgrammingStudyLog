@@ -5,17 +5,22 @@ import os
 import random
 import re
 import sys
+import re
 
 # Complete the abbreviation function below.
-def abbreviation(a, b):
-    cursor = 0
-    for i in range(len(a)):
-        if b[cursor] == a[i]:
-            cursor += 1
-        if cursor == len(b):
-            return 'YES'
-    return 'NO'
+memo = {}
+def solve(a, b):
+    # print('input: a = {}, b = {}'.format(a, b))
 
+
+
+def abbreviation(a, b):
+    global memo
+    memo = {}
+    if solve(a, b):
+        return 'YES'
+    else:
+        return 'NO'
 
 def main():
     q = int(input())
