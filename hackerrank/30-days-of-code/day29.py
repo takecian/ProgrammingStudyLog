@@ -20,8 +20,11 @@ if __name__ == '__main__':
 
         k = int(nk[1])
 
-        if k % 2 == 0:
-            print(k - 2)
-        else:
-            print(k - 1)
+        a = k - 1  # 答えの候補
+        expected = a | (a + 1)  # a の 1 の桁が全て1の数字で一番小さい数字
+
+        if expected <= n:  # expected が使えるなら、 a の値が & で作れる a & expected
+            print(a)
+        else:   # expected が使えないなら a & a - 1 が最大値
+            print(a - 1)
 
