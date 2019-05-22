@@ -11,7 +11,7 @@ import re
 memo = {}
 def solve(a, b):
     # print('input: a = {}, b = {}'.format(a, b))
-
+    pass
 
 
 def abbreviation(a, b):
