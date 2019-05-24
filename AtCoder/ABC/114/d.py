@@ -5,6 +5,22 @@ from collections import Counter
 from collections import defaultdict
 import bisect
 
+def solve(primes, index, target):
+    if index == len(primes):
+        if target == 1:
+            return 1
+        else:
+            return 0
+    ans = 0
+    for i in range(primes[index] + 1):
+        if target % (i + 1) != 0:
+            continue
+        ans += solve(primes, index + 1, target // (i + 1))
+
+    return ans
+
+
+
 def main():
     N = int(input())
     primes = [0] * (N + 1)
@@ -16,16 +32,8 @@ def main():
                 primes[j] += 1
                 cur //= j
 
-    ans = 0
-    for i in range(2, N - 1):
-        for j in range(i + 1, N):
-            for k in range(j + 1, N + 1):
-                # 75
-                if (i == 75 and j == 0 and k == 0) or (i == 0 and j == 75 and k == 0) or (i == 0 and j == 0 and k == 75):
-                    ans += 1
-                else:
-                    if (i == 15 and j == 5 and k == 0) or (i == 0 and j == 15 and k == 0) or (i == 0 and j == 0 and k == 75):
-                # 15, 5
+    # print(primes)
+    print(solve(primes, 0, 75))
 
 
 if __name__ == '__main__':
