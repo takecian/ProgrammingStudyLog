@@ -25,31 +25,23 @@ def main():
     MOD = 10**9 + 7
     N, M, K = map(int, input().split())
 
-    com = combination(N * M - 2, K - 2)
+    pattern = combination(N * M - 2, K - 2)
     # print(com)
-    com = com % MOD
+    pattern = pattern % MOD
     # print(com)
 
     ans = 0
-    for i in range(N*M):
-        iy = i // M
-        ix = i % M
-        # x
-        left = min(0, ix - 1)
-        left_sum = left * (left + 1) // 2 * M
 
-        right = M - ix
-        right_sum = right * (right + 1) // 2 * M
-
-        # y
-        top = min(0, iy - 1)
-        top_sum = top * (top + 1) // 2 * N
-
-        bottom = N - iy
-        bottom_sum = bottom * (bottom + 1) // 2 * N
-        ans += (left_sum + right_sum + top_sum + bottom_sum) * com
+    for dx in range(1, M):
+        ans += dx * (M - dx) * pattern * (N * N)
         ans = ans % MOD
 
+    # y
+    for dy in range(1, N):
+        ans += dy * (N - dy) * pattern * (M * M)
+        ans = ans % MOD
+
+    ans = ans % MOD
     print(ans)
 
 
