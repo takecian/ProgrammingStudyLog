@@ -3,7 +3,7 @@ from collections import Counter
 from collections import defaultdict
 import bisect
 import math
-import heapq
+from heapq import heappush, heappop
 
 def main():
     pass
