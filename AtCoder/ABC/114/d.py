@@ -23,7 +23,7 @@ def solve(primes, index, target):
 
 def main():
     N = int(input())
-    primes = [0] * (N + 1)
+    primes = [0] * (N + 1)  # i の約数の数を含んだリスト
 
     for i in range(N + 1):
         cur = i
