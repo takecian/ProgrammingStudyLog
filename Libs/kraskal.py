@@ -1,14 +1,4 @@
-# https://atcoder.jp/contests/abc065/tasks/arc076_b
-
-import itertools
-from collections import Counter
-from collections import defaultdict
 import collections
-from functools import reduce
-import bisect
-import math
-import heapq
-import copy
 
 # Union find
 class UnionFind():
@@ -49,6 +39,7 @@ class UnionFind():
     def group_size(self, x):
         return self.size[self.find(x)]
 
+
 Edge = collections.namedtuple("Edge", "start end weight")
 
 
@@ -82,37 +73,15 @@ def solve_by_kraskal(n, edges):
 
 def main():
     N = int(input())
-    x_dots = []
-    for i in range(N):
-        x, y = map(int, input().split())
-        x_dots.append((i, x, y))
+    edges = []
+    for _ in range(N):
+        s, e, w = map(int, input().split())
+        edges.append(Edge(s-1, e-1, w))
 
-    x_dots.sort(key=lambda x: x[1])
-    y_dots = copy.copy(x_dots)
-    y_dots.sort(key=lambda x: x[2])
-    # print(x_dots)
-    # print(y_dots)
+    route = solve_by_kraskal(N, edges)
 
-    x_edges = []
-    for i in range(N - 1):
-        dot = x_dots[i]
-        next_dot = x_dots[i + 1]
-        x_edges.append(Edge(dot[0], next_dot[0], min(abs(dot[1] - next_dot[1]), abs(dot[2] - next_dot[2]))))
-        x_edges.append(Edge(next_dot[0], dot[0], min(abs(dot[1] - next_dot[1]), abs(dot[2] - next_dot[2]))))
-
-    y_edges = []
-    for i in range(N - 1):
-        dot = y_dots[i]
-        next_dot = y_dots[i + 1]
-        y_edges.append(Edge(dot[0], next_dot[0], min(abs(dot[1] - next_dot[1]), abs(dot[2] - next_dot[2]))))
-        y_edges.append(Edge(next_dot[0], dot[0], min(abs(dot[1] - next_dot[1]), abs(dot[2] - next_dot[2]))))
-
-    route = solve_by_kraskal(N, x_edges + y_edges)
-    ans = 0
-    for r in route:
-        ans += r[2]
-
-    print(ans)
+    print(route)
+    print(sum([edge.weight for edge in route]))
 
 
 if __name__ == '__main__':
