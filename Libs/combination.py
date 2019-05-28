@@ -7,14 +7,36 @@ def combination(n, r):
         b *= (i + 1)
     return a // b
 
-# エラトステネスの篩: n 以下の数字うち、素数のリスト, O(n loglogn)
-def primes(n):
-    is_prime = [True] * (n + 1)
-    is_prime[0] = False
-    is_prime[1] = False
-    for i in range(2, int(n**0.5) + 1):  # 非素数を見つけたいから sqrt(n) まで調べたら良い(ペアが絶対 sqrt(n) 以下
-        if not is_prime[i]:
-            continue
-        for j in range(i * 2, n + 1, i):  # is_prime[i] は素数、その倍数を False にする
-            is_prime[j] = False
-    return [i for i in range(n + 1) if is_prime[i]]
+
+def cmb(n, r):
+    if n - r < r:  # 計算量が少ない方でやる
+        r = n - r
+
+    if r == 0:
+        return 1
+    if r == 1:
+        return n
+
+    numerator = [n - r + k + 1 for k in range(r)]  # 分子
+    denominator = [k + 1 for k in range(r)]  # 分母
+
+    for p in range(2, r + 1):
+        pivot = denominator[p - 1]
+        if pivot > 1:
+            offset = (n - r) % p
+            for k in range(p - 1, r, p):
+                numerator[k - offset] //= pivot
+                denominator[k] //= pivot
+                print(numerator)
+                print(denominator)
+                print('')
+
+    result = 1
+    for k in range(r):
+        if numerator[k] > 1:
+            result *= int(numerator[k])
+
+    return result
+
+
+print(cmb(12, 6))
