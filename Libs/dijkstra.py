@@ -2,8 +2,10 @@ from collections import defaultdict
 from heapq import heappop, heappush
 
 
-# 隣接リストによる有向グラフ
 class Graph:
+    """
+    隣接リストによる有向グラフ
+    """
     def __init__(self):
         self.graph = defaultdict(list)
 
@@ -17,9 +19,11 @@ class Graph:
         return self.graph.keys()
 
 
-#    ダイクストラ法（二分ヒープ）による最短経路探索
-#    計算量: O((E+V)logV)
 class Dijkstra:
+    """
+    ダイクストラ法（二分ヒープ）による最短経路探索
+    計算量: O((E+V)logV)
+    """
     def __init__(self, graph, start):
         self.g = graph.graph
 
