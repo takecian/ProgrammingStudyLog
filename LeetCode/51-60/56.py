@@ -24,13 +24,13 @@ class Solution:
                 if ne[0] <= end:
                     end = max(end, ne[1])
                     j += 1
-                    i = j
                 else:
-                    i = j
                     break
             ans.append([start, end])
+
             if j == len(intervals):
                 break
+            i = j
 
         return ans
 
