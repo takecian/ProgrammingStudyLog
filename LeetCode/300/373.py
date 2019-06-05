@@ -19,7 +19,8 @@ class Solution:
 
 
 def main():
-
+    s = Solution()
+    print(s.kSmallestPairs([1,7,11], [2,4,6]))
 
 if __name__ == '__main__':
     main()
