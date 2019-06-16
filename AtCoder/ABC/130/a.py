@@ -1,5 +1,4 @@
 #
-
 import itertools
 from collections import Counter
 from collections import defaultdict
@@ -7,12 +6,8 @@ import bisect
 from heapq import heappush, heappop
 
 def main():
-    N, K = map(int, input().split())
-    rest = N - K
-    if K == 0:
-        print(0)
-    else:
-        print(rest)
+    X, A = map(int, input().split())
+    print(0 if X < A else 10)
 
 if __name__ == '__main__':
     main()
