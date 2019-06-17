@@ -13,7 +13,7 @@ def main():
 
     total = 0
     j = 0
-    # 視点をずらしつつ K 以上の部分列の数を計算する
+    # 始点をずらしつつ K 以上の部分列の数を計算する
     for i in range(N):
         while j < N and total < K:
             total += A[j]
