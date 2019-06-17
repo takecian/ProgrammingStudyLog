@@ -1,4 +1,4 @@
-# ソート済みの配列からの二分探索で Longest Increase Subsequence を作る, O(n logn)
+# ソートされてない配列から LIS を作っていく。LISはソート済みの配列なので二分探索しつつ更新していく O(n logn)
 from bisect import bisect
 
 def LIS(L):
