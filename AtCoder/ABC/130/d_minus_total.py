@@ -13,16 +13,17 @@ def main():
 
     total = 0
     j = 0
-    # 視点をずらしつつ K 以上の部分列の数を計算する
+    # K 未満の部分列の数を計算する
     for i in range(N):
-        while j < N and total < K:
+        while j < N and total + A[j] < K:
             total += A[j]
             j += 1
-        if total >= K:
-            # print(N - j + 1)
-            ans += N - j + 1
+        ans += j - i
         total -= A[i]
 
+    # 連続部分列の全通りは N * (N + 1) // 2
+    # -> 始点から終点までの数で始点を一つずつずらす
+    ans = N*(N+1) // 2 - ans
     print(ans)
 
 
