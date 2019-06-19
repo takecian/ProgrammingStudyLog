@@ -17,10 +17,14 @@ def main():
         for i in range(1, N + 1):
             item_weight = W[i - 1]
             item_price = P[i - 1]
+            # 選ぶ余裕があるか
             if item_weight <= k:
+                # 選んだ場合の価値の最大値と選ばなかった場合の最大値の大きい方
                 dp[i][k] = max(dp[i-1][k - item_weight] + item_price, dp[i-1][k])
             else:
+                # 選ばなかった場合の最大値の大きい方
                 dp[i][k] = dp[i][k-1]
+
         # for d in dp:
         #     print(d)
         # print('')
