@@ -8,47 +8,27 @@ from heapq import heappush, heappop
 class Solution:
     def findOrder(self, numCourses, prerequisites):
         dic = defaultdict(lambda: [])
-
+        neigh = defaultdict(lambda: [])
         for c, p in prerequisites:
             dic[c].append(p)
+            neigh[p].append(c)
 
-        dones = set()
-        ans = []
+        que = []
         for i in range(numCourses):
             if len(dic[i]) == 0:  # no prerequisites
-                dones.add(i)
-                ans.append(i)
-                continue
+                que.append(i)
 
-        for i in range(numCourses):
-            if i not in dones:
-                candidates = [i]
-                que = [i]
+        ans = []
+        while que:
+            node = que.pop()
+            ans.append(node)
 
-                can_do = True
-                while que and can_do:
-                    c = que.pop()
-                    prereq = dic[c]
+            for i in neigh[node]:
+                dic[i].remove(node)
+                if len(dic[i]) == 0:
+                    que.append(i)
 
-                    for p in prereq:
-                        if p in dones:
-                            continue
-
-                        if p not in candidates:
-                            candidates.append(p)
-                            que.append(p)
-                        else:
-                            can_do = False
-                            break
-                if can_do:
-                    candidates.reverse()
-                    for c in candidates:
-                        dones.add(c)
-                        ans.append(c)
-                else:
-                    break
-
-        print(ans)
+        # print(ans)
         return ans if len(ans) == numCourses else []
 
 
