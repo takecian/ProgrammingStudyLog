@@ -17,7 +17,7 @@ def solve_by_warshall_floyd(n, edges):
 
     for edge in edges:
         d[edge.start][edge.end] = edge.weight
-        # d[edge.end][edge.start] = edge.weight # もし無効グラフならこれもたす
+        # d[edge.end][edge.start] = edge.weight # もし無向グラフならこれもたす
 
     for k in range(n):
         for i in range(n):

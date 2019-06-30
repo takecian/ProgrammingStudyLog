@@ -32,6 +32,21 @@
 
 * Haskell
 
+## コーディング面接で知っておきたい10の知識
+参考：https://www.youtube.com/watch?v=r1MXwyiGi_U
+
+1. DFS
+1. BFS
+1. Parentheses matching
+1. Hash table
+1. pointer manipulation
+1. reversing linked list
+  * https://leetcode.com/problems/reverse-linked-list/
+1. sort fundamentals
+1. recursion
+1. custom data structure
+1. binary search
+
 ## Pattern
 
 問題を解くときの着目点
@@ -39,8 +54,12 @@
 ### グラフ
 
 * 順列(itertools.permutations)でルートの選択肢を全列挙
-* ダイクストラ
-* ワーシャルフロイド
+* ダイクストラ法
+  * 最短経路探索に使う
+  * 全部の経路のコストが正
+  * heapq(優先度付きque)を使って実装する
+* ワーシャルフロイド法
+  * 全２点間の経路を探す
 * UnionFind で連結判定できないか
   * 辺を追加していくことしかできないので、辺を削除する話があったら reverse して考える
   * 最小全域木はクラスカル法で解く時に UnionFind を使う
