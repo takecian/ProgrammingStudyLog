@@ -8,7 +8,7 @@ class Solution:
         candidate_plants = [[1, 2, 3, 4] for _ in range(N)]
 
         answers = [0] * N
-        fixed = [False] * N
+
         need_check = set()
 
         edges = defaultdict(list)
@@ -23,37 +23,37 @@ class Solution:
 
         while len(que) > 0:
             garden = que.popleft()
-            if fixed[garden]:
-                continue
+            if answers[garden] == 0:
+                plants = candidate_plants[garden]
+                answers[garden] = plants[0]
 
-            plants = candidate_plants[garden]
-            answers[garden] = plants[0]
-            fixed[garden] = True
+                # print(candidate_plants)
+                candidate_plants[garden] = [plants[0]]
+                # print(candidate_plants)
 
-            print(candidate_plants)
-            candidate_plants[garden] = [plants[0]]
-            print(candidate_plants)
-            if garden in need_check:
-                need_check.remove(garden)
+                if garden in need_check:
+                    need_check.remove(garden)
 
-            for edge in edges[garden]:
-                if not fixed[edge]:
-                    # remove chosen plant from candidates
-                    if answers[garden] in candidate_plants[edge]:
-                        candidate_plants[edge].remove(answers[garden])
-                    que.append(edge)
+                for next_garden in edges[garden]:
+                    if answers[next_garden] == 0:
+                        # remove chosen plant from candidates
+                        if answers[garden] in candidate_plants[next_garden]:
+                            candidate_plants[next_garden].remove(answers[garden])
+                        que.append(next_garden)
 
             if len(que) == 0:
                 for i in range(N):
-                    if not fixed[i]:
+                    if i in need_check:
                         que.append(i)
                         break
             if len(need_check) == 0:
                 break
+            # print(que)
 
         for i in range(N):
             if answers[i] == 0:  # anything is okay
                 answers[i] = 1
+
         return answers
 
 
