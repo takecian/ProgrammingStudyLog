@@ -89,6 +89,9 @@
 
 ### Stacks & Queues
 
+* 括弧の有効判定に stack を使う
+  * https://leetcode.com/problems/valid-parentheses/
+
 ### Graph & Tree
 
 * 順列(itertools.permutations)でルートの選択肢を全列挙
