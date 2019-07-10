@@ -101,7 +101,6 @@
 * 二部グラフ(bipartite graph)
   * 頂点集合を二つの部分集合に分割した時に各集合内の頂点同士の間には辺がないようにできるグラフのこと
   * 2色で彩色できるか試すことでテストできる(DFSかBFS)
-
 #### ある区間の最小値、最大値をたくさん聞かれる（クエリ）
 * セグメント木を考える
   * 要素数 N 個の場合 2N-1 個からなるツリー
@@ -123,9 +122,13 @@
     for dy, dx in zip(dxs, dys):
        xxx
 ```
+  * https://leetcode.com/problems/flood-fill/
+
 * 四角形が出てきたら中点をうまく活用できないか考える
 
 ### Recursion
+* 問題を小さく分割して解く
+  * https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/
 
 ### DP(動的計画法)
 
