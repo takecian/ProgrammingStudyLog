@@ -83,7 +83,7 @@
     * https://leetcode.com/problems/product-of-array-except-self/
 ### Linked lists
 
-* head の前に Dummy node を作って`dummy.next = head` を使うと便利
+* head の前に Dummy node を作って`dummy.next = head` を使うと便利
   * `while cursor` みたいな感じで走査していく
 * ポインタを２つ用意して異なる速度で動かしてみる
 
