@@ -53,18 +53,24 @@
 
 ### Arrays & Strings
 
-### 回文・辞書式順序
+####
+
+* 文字列を先頭から走査していく
+  * https://leetcode.com/problems/strobogrammatic-number/
+
+#### 回文・辞書式順序
 * 文字列を reverse して比較してみる
 * 前方から比較してみる
 * 後ろから for 文を回してみる
   * 辞書式順序で最小の文字を作る時は後ろからも見てみる
 
-### 文字列
+#### 文字列
 * 回転する string の substring → string + string に対して含まれるか調べる 
 
-### 配列
+#### 配列
 
 * Sort したら簡単に解けないか
+  * https://leetcode.com/problems/wiggle-sort/
 * Reverse したら簡単に解けないか
 * 2つポインタ持たせて不要なループを減らせないか（しゃくとり方）
   * 先頭に２つポインタを持たせてずらしていく
@@ -74,7 +80,7 @@
 * 累積和(Cumulative sum)を計算して簡単にならないか
   * 前方からの累積和、後方からの累積和を考える
   * 全部の中から各要素をそれぞれ一つ取り除いたものを作る時に、前方&後方からの累積和を各ステップで組み合わせることで実現できる
-
+    * https://leetcode.com/problems/product-of-array-except-self/
 ### Linked lists
 
 * head の前に Dummy node を作って`dummy.next = head` を使うと便利
