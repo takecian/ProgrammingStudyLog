@@ -158,6 +158,11 @@
 
 ### Others
 
+#### Hash(dictionary, set)
+
+* 重複を取り除くのに使う
+  * https://leetcode.com/problems/letter-tile-possibilities/
+
 #### 貪欲法
 何か優先順位をつけて、その順番で処理していく
 * 大きい方(小さい方)から入る分だけ詰めてみる
