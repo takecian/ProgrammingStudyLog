@@ -144,6 +144,8 @@
 ### Recursion
 * 問題を小さく分割して解く
   * https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/
+* 取りうるパターンを再帰の中で分岐していく
+  * https://leetcode.com/problems/generate-parentheses/
 
 ### DP(動的計画法)
 
@@ -160,6 +162,8 @@
 ### Sorting & Search
 * ソートアルゴリズムは O(n log n)
 * 二分探索
+* 同点だった時に次は何の要素で並べるか、sort(key=lambda x: (x[0], x[1])) のようにタプルで指定できる
+  * https://leetcode.com/problems/reorder-log-files/
 
 ### Others
 
