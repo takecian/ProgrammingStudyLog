@@ -92,6 +92,8 @@
   * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 * 先頭から走査していって、不要なものを取り除くパターン、next を書き換えるタイミングに注意
   * https://leetcode.com/problems/remove-linked-list-elements/
+* リストの同士の計算は数値に変換してしまうと桁上がりを気にしなくて楽、 Dummy node も使う
+  * https://leetcode.com/problems/add-two-numbers-ii/
 
 ### Stacks & Queues
 
@@ -146,6 +148,8 @@
   * https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/
 * 取りうるパターンを再帰の中で分岐していく
   * https://leetcode.com/problems/generate-parentheses/
+* 条件によって再帰させる範囲を決めていく
+  * https://leetcode.com/problems/trim-a-binary-search-tree/
 
 ### DP(動的計画法)
 
