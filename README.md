@@ -213,3 +213,13 @@
 
 #### mod
 * 約数列挙することで対象を削れないか考える
+
+#### Finding majority
+
+* 配列の中の大部分を占める要素を見つける問題
+  * 各要素の数を数えていくパターン
+    * https://leetcode.com/problems/majority-element/
+  * さらに計算量を落とせるアルゴリズムがある
+    * Boyer-Moore Majority Vote Algorithm.
+      * https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
+    * https://leetcode.com/problems/majority-element-ii/
