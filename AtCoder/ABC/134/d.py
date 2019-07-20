@@ -15,12 +15,9 @@ def main():
     al = list(map(int, input().split()))
 
     ans = [0] * n
+    ans[-1] = al[-1]
 
-    half = math.ceil(n/2)
-    for i in range(half, n):
-        ans[i] = al[i]
-
-    for i in range(half-1, -1, -1):
+    for i in range(n-1, -1, -1):
         num = i + 1
         val = 0
         for j in range(num * 2 - 1, n, num):
@@ -33,10 +30,7 @@ def main():
     c = ans.count(1)
     print(c)
     if c > 0:
-        boxes = []
-        for i in range(len(ans)):
-            if ans[i] == 1:
-                boxes.append(i + 1)
+        boxes = [i + 1 for i in range(len(ans)) if ans[i] == 1]
         print(' '.join(map(str, boxes)))
 
 
