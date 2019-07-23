@@ -83,6 +83,7 @@
   * 前方からの累積和、後方からの累積和を考える
   * 全部の中から各要素をそれぞれ一つ取り除いたものを作る時に、前方&後方からの累積和を各ステップで組み合わせることで実現できる
     * https://leetcode.com/problems/product-of-array-except-self/
+
 ### Linked lists
 
 * head の前に Dummy node を作って`dummy.next = head` を使うと便利
@@ -179,12 +180,15 @@
 * 順序を保持する dictionary もある、OrderedDict
   * https://leetcode.com/problems/lru-cache/
 
-#### 貪欲法
-何か優先順位をつけて、その順番で処理していく
-* 大きい方(小さい方)から入る分だけ詰めてみる
-* 桁の大きい数字の中で取り除いて一番効果のある数字を取っていく
-  * https://leetcode.com/problems/remove-k-digits/
 
+#### 貪欲法
+* 何か優先順位をつけて、その順番で処理していく
+  * 大きい方(小さい方)から入る分だけ詰めてみる
+  * 桁の大きい数字の中で取り除いて一番効果のある数字を取っていく
+    * https://leetcode.com/problems/remove-k-digits/
+
+* 優先度順で操作したい＆要素を追加したりする場合は heapq(優先度付きキュー)を使う
+  * https://leetcode.com/problems/cut-off-trees-for-golf-event/
 
 #### 全探索
 * for 文で回す
