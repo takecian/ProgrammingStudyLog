@@ -25,12 +25,13 @@ class Solution(object):
         # find center
         l = 0
         r = mountain_arr.length() - 1
-        while l < r:
-            m = (l + r) / 2
+        while l <= r:
+            m = (l + r) // 2
             if mountain_arr.get(m) < mountain_arr.get(m + 1):
-                l = peak = m + 1
+                l = m + 1
             else:
-                r = m
+                r = m - 1
+        peak = l
         # print(m)
         # find right side
         l = 0
