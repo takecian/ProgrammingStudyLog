@@ -23,18 +23,21 @@ class Solution(object):
         """
 
         # find center
+        m = 0
         l = 0
         r = mountain_arr.length() - 1
-        while l < r:
-            m = (l + r) / 2
-            if mountain_arr.get(m) < mountain_arr.get(m + 1):
-                l = peak = m + 1
+        while l <= r:
+            m = (l + r + 1) // 2
+            if mountain_arr.get(m - 1) < mountain_arr.get(m) > mountain_arr.get(m + 1):
+                break
+            elif mountain_arr.get(m - 1) < mountain_arr.get(m):
+                l = m + 1
             else:
-                r = m
+                r = m - 1
         # print(m)
         # find right side
         l = 0
-        r = peak
+        r = m
         while l <= r:
             c = (l + r) // 2
             if mountain_arr.get(c) == target:
@@ -45,7 +48,7 @@ class Solution(object):
             else:
                 r = c - 1
         # find left side
-        l = peak + 1
+        l = m + 1
         r = mountain_arr.length() - 1
         while l <= r:
             c = (l + r) // 2
