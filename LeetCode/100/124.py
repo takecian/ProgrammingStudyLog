@@ -17,7 +17,6 @@ class Solution(object):
             nonlocal ans
             if node is None:
                 return 0
-            ans = max(ans, node.val)
 
             right = rec(node.right)
             left = rec(node.left)
