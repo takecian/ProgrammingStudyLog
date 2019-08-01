@@ -23,3 +23,7 @@ class Solution:
                 ans += str(c)
 
         return ans if len(ans) > 0 else '0'
+
+
+s = Solution()
+print(s.multiply('123', '123'))
