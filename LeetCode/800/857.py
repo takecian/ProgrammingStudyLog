@@ -8,21 +8,20 @@ from heapq import heappush, heappop
 
 
 class Solution:
-    def mincostToHireWorkers(self, quality, wage, K: int) -> float:
-        # choose captain
-        ans = 10 ** 10
-        workers = [(q, w) for q, w in zip(quality, wage)]
-        for i in range(len(quality)):
-            captain_q = workers[i][0]
-            captain_w = workers[i][1]
-            ratio = captain_w / captain_q  # 1 quality あたりの仕事量
-            candi = list(filter(lambda x: x[1] / x[0] <= ratio, workers))
-            candi = list(map(lambda x: max(x[1], x[0] * ratio), candi))
-            # print(candi)
-            candi.sort()
-            if len(candi) < K:
-                continue
-            ans = min(ans, sum(candi[:K]))
+    def mincostToHireWorkers(self, quality: List[int], wage: List[int], K: int) -> float:
+        workers = [[float(w) / q, q] for w, q in zip(wage, quality)]
+        workers.sort()  # 1quality あたりのコストでソート
+        ans = float('inf')
+        qsum = 0
+        heap = []
+        for r, q in workers:  # 1quality あたりの少ない方から追加していく、 ratio が小さいものは条件2を満たさないため
+            if len(heap) == K:
+                qsum += heappop(heap)  # いっぱいだったら quality の大きいものを除外する、不要なので
+
+            heappush(heap, -q)
+            qsum += q
+            if len(heap) == K:
+                ans = min(ans, qsum * r)
 
         return ans
 
