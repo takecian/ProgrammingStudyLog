@@ -234,3 +234,7 @@
 ### System design
 * https://www.hiredintech.com
 * https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md
+
+## Others
+
+* https://yangshun.github.io/tech-interview-handbook/
