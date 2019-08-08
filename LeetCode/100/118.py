@@ -15,3 +15,13 @@ class Solution(object):
                 ans[i][j] = ans[i - 1][j - 1] + ans[i - 1][j]
 
         return ans
+
+
+class Solution2:
+    def generate(self, numRows: int) -> List[List[int]]:
+        ans = [[1]]
+        for i in range(1,numRows):
+            left = ans[i-1]+[0]
+            right = [0] + ans[i-1]
+            ans.append([l+r for l, r in zip(left, right)])
+        return ans[:numRows]
