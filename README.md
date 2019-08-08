@@ -257,3 +257,4 @@
 ## Others
 
 * https://yangshun.github.io/tech-interview-handbook/
+* https://www.hiredintech.com/classrooms/interview-strategies/lesson/88https://www.hiredintech.com/classrooms/interview-strategies/lesson/88
