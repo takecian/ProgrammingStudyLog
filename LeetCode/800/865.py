@@ -1,3 +1,10 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
 class Solution:
     def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
         # find all deepest nodes, bfs
@@ -21,34 +28,11 @@ class Solution:
             que = children
 
         # find subtree node which has all deepest nodes as children
-        def get_leaf(node):
-            if node.left is None and node.right is None:
-                return set([node.val])
-            leafs = []
-            if node.left:
-                leafs += get_leaf(node.left)
-            if node.right:
-                leafs += get_leaf(node.right)
-            return set(leafs)
-
         def dfs(node):
-            if node.left is None and node.right is None:
-                if get_leaf(node) >= deepest:
-                    return node
-                else:
-                    return None
-            if node.left:
-                ret = dfs(node.left)
-                if ret:
-                    return ret
-            if node.right:
-                ret = dfs(node.right)
-                if ret:
-                    return ret
-
-            if get_leaf(node) >= deepest:
+            if not node or node.val in deepest:
                 return node
-            else:
-                return None
+            l = dfs(node.left)
+            r = dfs(node.right)
+            return node if l and r else l or r
 
         return dfs(root)
