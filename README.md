@@ -248,12 +248,6 @@
       * https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
     * https://leetcode.com/problems/majority-element-ii/
     
-## Other areas
-
-### System design
-* https://www.hiredintech.com
-* https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md
-
 ## Others
 
 * https://yangshun.github.io/tech-interview-handbook/
