@@ -5,8 +5,8 @@ import collections
 import bisect
 
 def main():
-    N, M = map(int, input().split())
-
+    n, m = map(int, input().split())
+    print((1900*m+(n-m)*100)*2**m)
 
 if __name__ == '__main__':
     main()
