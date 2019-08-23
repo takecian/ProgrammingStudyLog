@@ -1,4 +1,3 @@
-
 # https://atcoder.jp/contests/abc046/tasks/arc062_a
 
 import itertools
@@ -7,8 +6,12 @@ from collections import defaultdict
 from collections import deque
 import bisect
 from heapq import heappush, heappop
-import math
 
+def div(a, b):
+    if a % b == 0:
+        return a // b
+    else:
+        return (a // b) + 1
 
 def main():
     n = int(input())
@@ -16,8 +19,8 @@ def main():
     for _ in range(n):
         tt, at = map(int, input().split())
 
-        temp_t = math.ceil(t/tt)
-        temp_a = math.ceil(a/at)
+        temp_t = div(t, tt)
+        temp_a = div(a, at)
         co = max(temp_t, temp_a)
 
         t = co * tt
