@@ -10,17 +10,11 @@ from heapq import heappush, heappop
 def main():
     n = int(input())
     al = []
-    bl = []
     for _ in range(n):
         a = int(input())
         al.append(a)
 
-    bl = list(set(al))
-    bl.sort()
-    conv = {}
-    for i in range(len(bl)):
-        conv[bl[i]] = i
-
+    conv = {a: i for (i, a) in enumerate(sorted(set(al)))}
     for i in range(len(al)):
         print(conv[al[i]])
 
