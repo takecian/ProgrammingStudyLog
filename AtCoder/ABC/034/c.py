@@ -7,21 +7,16 @@ from collections import defaultdict
 from collections import deque
 import bisect
 from heapq import heappush, heappop
+from math import factorial
+
 
 def main():
-    W, H = map(int, input().split())
-    dp = [[0] * W for _ in range(H)]
-    dp[0][0] = 1
-
-    mod = 10**9 + 7
-
-    for h in range(H):
-        for w in range(W):
-            if w + 1 < W:
-                dp[h][w+1] += (dp[h][w] % mod)
-            if h + 1 < H:
-                dp[h+1][w] += (dp[h][w] % mod)
-    print(dp[-1][-1] % mod)
+    w, h = map(int, input().split())
+    m = 10 ** 9 + 7
+    a = factorial(w + h - 2)
+    b = pow(factorial(w - 1), m - 2, m)
+    c = pow(factorial(h - 1), m - 2, m)
+    print(a * b * c % m)
 
 
 if __name__ == '__main__':
