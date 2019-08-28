@@ -49,7 +49,33 @@
   * 64文字（英数と+/=) で表す
   * 64文字だから 64=2**6 から 6bit 分を表すことができる
   * 6bit は半端なので、４文字分(3byte)をまとめて変換していく
-  * 3byte が 4byte になるので 1.3倍長くはなる
+  * 3byte(24bit) が 4byte になるので 1.3倍長くはなる
+
+* 秒数
+  * 一日86400秒
+  * 一ヶ月約250万秒
+  
+* Various operations time
+
+|Operations|Time|
+|:--|:--|
+| execute typical instruction |	1/1,000,000,000 sec = 1 nanosec| 
+| execute typical instruction |	1 microsec = 1000 nanosec| 
+| execute typical instruction |	1 millsec = 1000 microsec| 
+| fetch from L1 cache memory | 0.5 nanosec| 
+| branch misprediction | 5 nanosec| 
+| fetch from L2 cache memory | 7 nanosec| 
+| Mutex lock/unlock | 25 nanosec| 
+| fetch from main memory | 100 nanosec| 
+| send 2K bytes over 1Gbps network | 20,000 nanosec| 
+| read 1MB sequentially from memory | 250,000 nanosec| 
+| fetch from new disk location (seek) | 8,000,000 nanosec| 
+| read 1MB sequentially from disk | 20,000,000 nanosec| 
+| send packet US to Europe and back | 150 milliseconds = 150,000,000 nanosec| 
+
+
+
+http://norvig.com/21-days.html#answers
 
 ## Ref.
 * https://www.hiredintech.com

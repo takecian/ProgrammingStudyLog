@@ -109,7 +109,7 @@
 * head の前に Dummy node を作って`dummy.next = head` を使うと便利
   * `while cursor` みたいな感じで走査していく
 * ポインタを２つ用意して異なる速度で動かしてみる
-* 再帰と組み合わせて特パターン
+* 再帰と組み合わせて解くパターン
   * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 * 先頭から走査していって、不要なものを取り除くパターン、next を書き換えるタイミングに注意
   * https://leetcode.com/problems/remove-linked-list-elements/
