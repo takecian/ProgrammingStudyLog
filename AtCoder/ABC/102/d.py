@@ -21,10 +21,9 @@ def main():
 
     while c <= n - 2:
         while True:
-            if abs(P - Q) < abs((P + al[l]) - (Q - al[l])):  # これ以上差が縮まらないなら break
-                break
-
             if l == c - 1:
+                break
+            if abs(P - Q) < abs((P + al[l]) - (Q - al[l])):  # これ以上差が縮まらないなら break
                 break
 
             P += al[l]
@@ -32,9 +31,9 @@ def main():
             l += 1
 
         while True:
-            if abs(R - S) < abs((R + al[r]) - (S - al[r])): # これ以上差が縮まらないなら break
-                break
             if r == n - 1:
+                break
+            if abs(R - S) < abs((R + al[r]) - (S - al[r])): # これ以上差が縮まらないなら break
                 break
 
             R += al[r]
