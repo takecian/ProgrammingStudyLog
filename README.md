@@ -211,14 +211,17 @@
   * https://leetcode.com/problems/cut-off-trees-for-golf-event/
 
 #### 全探索
-* for 文で回す
+* 全組み合わせを for 文で回す
+  * Grid とか 配列とか
   * 多重ループになると厳しいことがある
     * 多重ループになった場合にループを減らせないか
     * 判定式を書き換えてループが減らせないか考える
   * 数が多くなさそうであれば全ループで試す
     * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-* Bit 全探索で解けるか考える
+* 組み合わせ全探索は Bit 全探索で解けるか考える
   * O(2**n) なのでできれば避けたい
+* 答えになる可能性ある下限と上限から初めて 2分探索で減らしていく
+  * https://atcoder.jp/contests/abc063/tasks/arc075_b
 
 #### 区間スケジューリング問題
 * 終端(最後の位置)でソートしてそれを基準に選ぶ
@@ -237,6 +240,7 @@
 
 #### mod
 * 約数列挙することで対象を削れないか考える
+* 各桁で分解して余りを加算しても値全体の余りは計算できる
 
 #### Finding majority
 
