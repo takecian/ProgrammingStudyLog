@@ -1,8 +1,20 @@
-#
+memo = {}
+
 class Solution(object):
     def getMoneyAmount(self, n):
-        dp = [[0] * (n+1) for _ in range(n+1)]
-        for lo in range(n, 0, -1):
-            for hi in range(lo+1, n+1):
-                dp[lo][hi] = min([x + max(dp[lo][x-1], dp[x+1][hi]) for x in range(lo, hi)])
-        return dp[1][n]
+        return self.calc(1, n)
+
+    def calc(self, l, r):
+        if l >= r:  # answer number, no cost
+            return 0
+
+        if (l, r) in memo:
+            return memo[(l, r)]
+
+        minres = 10 ** 15
+        for i in range(l, r + 1):
+            res = i + max(self.calc(l, i - 1), self.calc(i + 1, r))
+            minres = min(res, minres)
+
+        memo[(l, r)] = minres
+        return memo[(l, r)]
