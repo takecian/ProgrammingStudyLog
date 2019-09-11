@@ -255,6 +255,23 @@
     * Boyer-Moore Majority Vote Algorithm.
       * https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
     * https://leetcode.com/problems/majority-element-ii/
+
+## Tips
+
+1. Clarify input
+  * How large
+  * Possible input, e.g. only positive integers, floats, zero, negative, None
+2. Clarify output
+3. Speak ieda
+  * How to solve simple problem
+  * Entire approach
+4. Write code
+  * code clean
+  * corner case
+5. Optimize
+  * Time complexity
+  * Space complexity
+
     
 ## Others
 
