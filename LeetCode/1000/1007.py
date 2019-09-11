@@ -1,9 +1,9 @@
-class Solution:
+aclass Solution:
     def minDominoRotations(self, A: List[int], B: List[int]) -> int:
         n = len(A)
 
         ans = 10**10
-        for i in range(1, 7):
+        for i in [A[0],B[0]]:
             can_be_same = True
             a_count = 0
             b_count = 0
