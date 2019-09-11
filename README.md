@@ -260,7 +260,7 @@
 
 1. Clarify input
   * How large
-  * Possible input, e.g. only positive integers, floats, zero, negative, None
+  * Possible input, e.g. only positive integers, floats, zero, negative, None, empty
 2. Clarify output
 3. Speak ieda
   * How to solve simple problem
