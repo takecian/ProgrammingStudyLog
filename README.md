@@ -265,7 +265,7 @@
 3. Speak ieda
   * How to solve simple problem
   * Entire approach
-4. Write code
+4. Write code, 'Should I start coding with this idea?'
   * code clean
   * corner case
 5. Optimize
