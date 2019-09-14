@@ -194,6 +194,14 @@
 * 同点だった時に次は何の要素で並べるか、sort(key=lambda x: (x[0], x[1])) のようにタプルで指定できる
   * https://leetcode.com/problems/reorder-log-files/
 
+### Binary search
+
+* ある特定の値を答える場合に答えになる可能性のある下限と上限が分かるなら2分探索で減らしていく
+  * https://atcoder.jp/contests/abc063/tasks/arc075_b
+  * https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+  * https://leetcode.com/problems/koko-eating-bananas/
+  * https://leetcode.com/problems/minimize-max-distance-to-gas-station/
+
 ### Others
 
 #### Hash(dictionary, set)
@@ -224,8 +232,6 @@
     * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 * 組み合わせ全探索は Bit 全探索で解けるか考える
   * O(2**n) なのでできれば避けたい
-* 答えになる可能性ある下限と上限から初めて 2分探索で減らしていく
-  * https://atcoder.jp/contests/abc063/tasks/arc075_b
 
 #### 区間スケジューリング問題
 * 終端(最後の位置)でソートしてそれを基準に選ぶ
