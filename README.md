@@ -188,6 +188,11 @@
   * LIS : Longest Increasing Subsequense
   * 挿入ソートする時の操作の回数とかもこれ
 
+#### 最大長
+直前までの最長＋今の時点の文字（条件が一致するなら）、という考え方で連続する長さの計算ができる。
+* https://atcoder.jp/contests/abc141/tasks/abc141_e
+* https://leetcode.com/problems/longest-line-of-consecutive-one-in-matrix/
+
 ### Sorting & Search
 * ソートアルゴリズムは O(n log n)
 * 二分探索
