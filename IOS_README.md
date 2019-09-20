@@ -1,6 +1,13 @@
 # Swift Interview Questions and Answers by raywenderlich
 
 https://www.raywenderlich.com/762435-swift-interview-questions-and-answers
+https://www.raywenderlich.com/2618-how-to-apply-for-an-ios-developer-job
+https://www.raywenderlich.com/2616-ios-interview-questions
+
+# Knowledge
+
+## Code signing
+https://www.raywenderlich.com/3078-ios-code-signing-under-the-hood
 
 # Part1
 
