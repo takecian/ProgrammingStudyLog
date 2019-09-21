@@ -2,9 +2,9 @@ class StreamChecker:
 
     def __init__(self, words: List[str]):
         self.s = ''
-        self.dic = collections.defaultdict(set)
+        self.dic = collections.defaultdict(list)
         for w in words:
-            self.dic[w[-1]].add(w)
+            self.dic[w[-1]].append(w)
 
     def query(self, letter: str) -> bool:
         self.s += letter
