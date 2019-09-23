@@ -9,6 +9,10 @@ https://www.raywenderlich.com/2616-ios-interview-questions
 ## Code signing
 https://www.raywenderlich.com/3078-ios-code-signing-under-the-hood
 
+## Architecture pattern
+
+https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
+
 # Part1
 
 https://medium.com/@duruldalkanat/ios-interview-questions-13840247a57a
