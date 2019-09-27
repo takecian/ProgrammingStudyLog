@@ -119,12 +119,12 @@ iOS app state are
 
 ### What is weak and onwned
 * weak reference
- * not increate reference count
- * variable can be nil
+  * not increate reference count
+  * variable can be nil
   
 * unowned
- * not increate reference count
- * variable can not be nil, if nil it will crash
+  * not increate reference count
+  * variable can not be nil, if nil it will crash
 
 ### What is memory
 * allocate memory but not release it after using it
@@ -143,7 +143,7 @@ iOS app state are
 
 ### What is optinal chaning?
 * optinal variables or properties
-  `someValue?.someData?.someInt?
+  * `someValue?.someData?.someInt?`
 
 ### What is the purpose of reuseudentiifer of UITalbeView
 * Reuse UITableView for better performace
@@ -167,7 +167,7 @@ iOS app state are
 
 ### Why use GCD?
 * GCD manage threads, 
-* NSTread is user's resposiblity.
+* NSTread management is user's resposiblity.
   * How many threads created
 
 ### What are readers-writers locks?
@@ -248,6 +248,197 @@ UIApplication, UIViewController, UIView classes responders.
 This first responder is designated to receve events first.
 Overriding the canBecomeFirstResponder.
 
+### What is operator overloading
+* Change operators behavior
+
+### What is function?
+* Chunks of code that performs a specific tasks.
+* A series of statements
+* reused
+
+### What is ABI?
+* Application binary interface
+  * ABI stable means that Binary can connect with operationg system and not break between versions of iOS and Swift.
+* Can reduce bundle size as there is no need to include Swift standart library into app framework folder.
+
+### What are design patterns?
+* A series of reusable solutions to common problems.
+  * Singleton
+  * Facade
+  * Memento, Observer
+
+### What is singleton?
+* shared instance in process
+* provide global access
+
+### What is MVC, MVVM
+* architecture
+* Model-View-Controller
+* Model-ViewModel-View
+
+### What isare battery efficient location tracking API
+* Significant location changes
+  * approximately every 500meteres
+* Region monitoring
+  * track enter/exit event from circulr regions
+* Visit events
+  * monitor place visit events
+
+### What are the main benefits of Swift?
+* Optional types
+* Type safe
+* OSS
+* Build in error handlingg
+
+### What are generics in Swift?
+* Generic code enables you to write reusable code.
+
+
+### What is guard and defer?
+* guard is conditional statemment and if condition is not met, must return
+* defer is must executed statement before leavingg scope
+
+### What is CALayer?
+* CALayer are objects that represent visual content.
+* They are underlying components that helps create a view
+* CALayer are main component of CoreAnimation
+
+### What is AutoLayout?
+* AutoLayout is way to laying out of views with constraints.
+
+### How to setup live rendering in storyboard
+* @IBDesignable to render custom view in storyboard
+* @IBInspectable provide access user-defined runtime attributes
+
+### What is Size Class
+* Use size class for customizing layout for iPad, iPhone plusm max
+
+### What is intrinsic content size?
+* intrinsic content size is size to show all content
+
+* Content Hugging Priority（コンテンツに沿う優先度）はコンテンツサイズよりも大きくなりにくさ、
+* Content Compression Resistance Priority（コンテンツの圧縮抵抗優先度）
+
+### What are file owner?
+* The file owner is the object that loads the nib.
+
+### What is unit test?
+* Tests smallest unit of functionality
+  * api call
+;  * some logic
+  * data load/savve
+
+### What is core data, how is core data different from SQLite?
+* SQLite is database itself
+* Core data is not database, but object relational model
+  * Core data use SQLite at persistent storage. 
+
+### What is a protocol in Swift?
+* protocol define methods and properties can be implemented
+
+### What is category in objc?
+* Add methods to an existing class 
+  * Similar to extension in Swift
+* Advantages
+  * can extend any class
+* Disadvantages
+  * cannot safely ovverride methods 
+
+### NSArray and NSMutableArray
+* NSArray is immutable
+  * thread-safe because it not changed
+* NSMutableArray is mutable
+
+### What are blocks and how are they used?
+* Blocks are a launguage feature
+* Create anoynmous function 
+```objc 
+^{
+    NSLog(@"this is a block")
+ }
+```
+
+### What is `id`?
+* id is a pointer to any type of objc object 
+
+### What is dispatch_once?
+* dispatch_once is synchronous porcess 
+* perform something once and only once
+  * used for creating singleon instance
+
+
+### What happens when we invoke method on null?
+* nop
+
+## What is the difference between underscore(_xx) and self.xx?
+* self.xx is access view setter/getter
+* _xx is direct access
+
+## What is process and thread
+* process is a instance of app
+* thread is executing some task and shared memory space between threads
+
+## What is method swizzling?
+* exchanging implementation of two methods at run time
+
+## What is bundle?
+* bundle is self contained executable file
+  * 
+
+## Difference between UIWindow and UIView?
+* UIWindow does not have any visible content
+  * work as container
+* Views are portion of a window
+
+## What are benefits of collections views?
+* multiple cells in one row
+* customizable layout
+* horizontal scroll
+
+## Diff between storyboard and nib?
+* storyboard
+  * segues
+  * multiple viewcontrollers
+* nib
+  * create reference to file's owner
+
+## How to animate view with constraint?
+* call `layoutIfNeeded` within animation block after changing constraint
+
+## How we can execute some code when app is in background?
+* register background tasks
+* background time is up to 180 sec or so
+
+## How to store user info
+* Store data in keychain as it stores safely
+
+## Diff between `viewDidLoad` and `viewDidAppear`?
+* viewDidLoad is called once
+* viewDidAppear is when view did appear
+
+## What user default can store
+* NSData, NSString, NSNumber, NSDate, NSArray, or NSDictionary. 
+* If you want other data type, need to serialize Data
+
+## How do you check if your code has memory leaks?
+* Use memory graph debugger
+* Use leaks in instruments
+  * Need to dSYM when debug
+
+## What does static analyzer do?
+* static analyzer is used to find bugs before running app
+
+## Notification center, local and remote notification
+* Notification center is mechanizm inform some event occurs with data
+* Local notification is notification to user scheduled locally
+* Remote notification is notification to user from remote(server)
+
+## Diff between developer and ent acount
+* developer for appstore
+* enterprise for employee
+
+## What is wild card app id?
+* Applied for multiple bundle id which matched wildcard
 
 ## Refs.
 https://www.udemy.com/course/complete-reference-ios-interview-questions-part-2/
