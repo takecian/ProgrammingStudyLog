@@ -13,6 +13,246 @@ https://www.raywenderlich.com/3078-ios-code-signing-under-the-hood
 
 https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
 
+# Online course
+https://www.udemy.com/course/complete-reference-ios-interview-questions-part-1/
+
+## Part 1
+
+### What is Cocoa Touch?
+Cocoa touch is,
+* UI Framework for iOS platform
+* Follows MVC
+* Includes Foundation and UIKit
+
+### What is atomic property
+* Guarantee value returend
+  * That you will never see partial writes
+  * Minor performane
+* Not thread safe
+
+### What is non atomic 
+* No Guarantee value returend
+
+### Appid, bundle id
+* App ID: team ID + bundle ID
+* Team ID: 10 character strings
+* Bundle ID: reverse DNS notation
+
+### How achieve concurrency
+* Use Threads
+  * Low level, hard to maintain
+* Use GCD(Grand Central Dispatch)
+  * easy to manage threads
+  * Use DispatchQueue
+  * Use for simple independent task
+* Operation Queue
+  * high level abstraction of GCD
+  * use Operation class
+  * Use for depedent task
+
+https://qiita.com/shiz/items/693241f41344a9df6d6f
+
+### App State in iOS
+iOS app state are
+* Not running
+  * before launchd, terminated
+* Inactive
+  * app is runining in foreground but not receiving event
+  * system prompt like sms message, phone call
+* Active
+  * running
+* Background
+  * app is background and executing code
+* Suspended
+  * is in memory but not running code
+
+### What UIKit
+* framework provicdes app's user interface such as UILabel, UIWindow
+* also provides window, animation
+
+### What is not running state
+* not launched
+* terminated to keep more memory space for foreground app
+
+### What is active
+* running in foreground, receive events
+
+### What is Metal
+* Low level 3d graphics and compute shader API
+* combines OpenGL and OpenCL
+
+### value types and reference types
+* value type is not shared
+  * unique copy when assigned
+  * Swift primitive types such as Int, Float, String, Struct, Array, Set, Dictionary are value type
+
+* reference type can be shared
+  * class
+
+### What is strong reference
+* Hold and increase reference count
+  * not deleted while holding
+
+### What is weak referene
+* Hold and not increase reference count
+  * can be deleted while holding
+
+### What is ARC, automatice reference counting
+* Memory management system
+  * count reference counting
+  * if reference counting is zero, object is deleted
+
+### What are assign, retain, and copy
+* Assign is for primitive values like int, bool, double
+* Retain will retain reference of object for object instance
+* Copy will make copy of original object, not to get affected
+
+### What is autorelease pool?
+* automatically increment retain count when used
+* automatically decrement retain count at the end of run loop
+* no longer used by developer, but system use this instead of developers
+
+### What is guard
+* controll flow statement
+* evaluate boolean condition, unwrap optional values
+  * if condition not met, should return
+
+### What is weak and onwned
+* weak reference
+ * not increate reference count
+ * variable can be nil
+  
+* unowned
+ * not increate reference count
+ * variable can not be nil, if nil it will crash
+
+### What is memory
+* allocate memory but not release it after using it
+* memory space can't be recovered
+* retaing cycle(circuler reference) are one of the main cause
+  * retaing cycle is 2 objects keep strong reference each other
+
+### Common scenarios of retain cycle
+* strong delegate
+  * basically delegate should be weak reference
+
+### What is lazy stored properties
+* delay initialization until used
+  * if not initialized, run initializer
+* use this if impossible initialization at definition
+
+### What is optinal chaning?
+* optinal variables or properties
+  `someValue?.someData?.someInt?
+
+### What is the purpose of reuseudentiifer of UITalbeView
+* Reuse UITableView for better performace
+
+### What are the ways to layout elements?
+* Storyboard
+* XIB
+* Code
+
+### What is concurrency
+* Concurrency is dividing up the execution at tge sane time
+* Process: an instance of running up
+* Thread: path of execution
+
+### What is Grand central dispatch
+* Provide low level API to run task concurrently
+  * manage threads instead of developers
+* Dispatch queue
+* Main dispatch queue
+* Serial deispatch que: run one task at the same time
+
+### Why use GCD?
+* GCD manage threads, 
+* NSTread is user's resposiblity.
+  * How many threads created
+
+### What are readers-writers locks?
+multiple threads reading at the same time, need to avoid problems.
+* Dead lock
+* Race condition
+
+### What is NSOperation, NSOperationQue
+* extra overhead compared to GCD
+* have additional feature cancel, suspend
+
+### What is KVC
+* Key value coding
+* Use string to access properties 
+* The same as reflection
+
+###  What is KVO
+* Key value observing
+* Observe change properties
+* Notify properties changes
+
+### What is diff of bounds and frame?
+* frame: rectanble reporesentation x,y,width,height, relevant to its parent cooridnate space
+* bounds: rectanble reporesentation x,y,width,height, relevant to its own cooridnate space
+
+### Which thread should be used with UIKit classes?
+* main thread
+* compute, download image on background, and update UI on main thread
+
+### What is IBDesiable used for?
+* let interface builder perform live updates on view
+* add mark @IBDesinable at top of class
+
+### What is dif of synchronous and asynchronous?
+* return synchronous run task on the same thread
+* return immidiately and run task asynchronously
+
+### What is enum
+* enuermuration
+  * some pre defined types
+
+### What is NSError
+* NSError contains information about domain, error code
+* maybe provide error description
+
+### Why don't we use strong for enum in objc?
+* enum is value type
+
+### What is @systhesize in objc
+* tell compliler that is should synthesize the setter and/or getter for property if do not supply them with @implementation block
+
+### Why do we use synchronized?
+* sysnchronized keyword guarantees that only one thread can execute that cide.
+* avoid race condition
+
+### differece strong, weak, read only and copy
+* strong: point object and increase reference count
+* weak: point object but not increase reference count, delegate, parent-child relationship
+* read only: set property initially but not changed
+* copy: create copy of object prevents original value change
+
+### What is dynamic dispatch
+
+* the process of selecting which implementation used at function called at run time
+* class implementation can be subclassed, compliler does not know which function executed at run time, it depends on instance.
+
+* opposite, statically dispatch, compiler knows which function called
+  * use `final` or `static`
+
+### What is completion handler?
+* the way to get notified when some task is complete
+
+### What is responder chain?
+* responder chain is series of responder objects.
+UIResponder class is the base class for all responder classes.
+UIApplication, UIViewController, UIView classes responders.
+
+This first responder is designated to receve events first.
+Overriding the canBecomeFirstResponder.
+
+
+## Refs.
+https://www.udemy.com/course/complete-reference-ios-interview-questions-part-2/
+https://www.udemy.com/course/complete-reference-ios-interview-questions-part-3/
+
 # Part1
 
 https://medium.com/@duruldalkanat/ios-interview-questions-13840247a57a
