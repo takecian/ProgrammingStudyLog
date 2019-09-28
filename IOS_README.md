@@ -366,7 +366,6 @@ Overriding the canBecomeFirstResponder.
 * perform something once and only once
   * used for creating singleon instance
 
-
 ### What happens when we invoke method on null?
 * nop
 
@@ -383,7 +382,9 @@ Overriding the canBecomeFirstResponder.
 
 ## What is bundle?
 * bundle is self contained executable file
-  * 
+  * info.plist
+  * resource
+  * other files like framework files
 
 ## Difference between UIWindow and UIView?
 * UIWindow does not have any visible content
@@ -439,6 +440,155 @@ Overriding the canBecomeFirstResponder.
 
 ## What is wild card app id?
 * Applied for multiple bundle id which matched wildcard
+
+## What is REST
+* The way of web api format
+* stateless, HTTP protocol used
+
+## What is application Sandboxing
+* Application is isolated by sandbox
+* App has restricted access
+* https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html
+
+## How to de-symbolicate crash log
+* use dSYM from xcarchive
+* use symbolicatecrash command
+
+## Why closure weak self 
+* avoid retain cycle
+
+## difference between points and pixel
+* point is not dot by dot pixel
+* retina is x2 or x3 
+
+## What is stackview
+* stack views
+* horizontal and vertical
+
+## What is makeKeyAndVisible
+* https://developer.apple.com/documentation/uikit/uiwindow/1621601-makekeyandvisible
+
+## horizontal UITableView
+* not possible, only vertical
+
+## Explain update cycle
+* run loop
+
+## What is setNeesLayout
+* tells system that we need to layout and redaraw at update cycle
+* asynchronous activity, does later at some point
+* better performance
+
+## What is layoutIfNeeded
+* synchronous call that we need to layout and redaraw at update 
+* layout done synchronously
+
+## What is layoutSubviews
+* called at layout done at custom UIView
+
+## Explain layout phase
+* 1. update constrains
+* 2. layout views and subviwews depends constrains
+* 3. redarw
+
+## How to make UITableView scrolling effectively
+* Reuse cell instances
+* avoid transparent
+* use prefetch API
+* Use iOS10 later because 
+
+## unwind, push, modal segue
+* unwind: back 
+* push: push vc into navigation controller
+* modal show modal
+
+## What is uinavigation bar
+* Class, which implements navigating content
+* Bar with title, backbutton, left/right button
+
+## Explain auto resizing mack
+* integer bit mask, determins how resize when superview bounds changes
+* extend or fixed size
+
+## What is willFinishLaunchingWituOpetions
+* method is called when the launch process is initiated
+
+## What is didFinishLaunchingWituOpetions
+* method is called when the launch process is finished
+* called before any window displayed
+  * need to initialize tasks here
+
+## What is following method
+* applicationDidBecomeActive:
+  * called at becoming active state
+* applicationWillResignActive
+  * will go to background
+* applicationDidEnterBackground
+  * called after background
+* willEnterForeground
+  * called before foreground
+* willTerminate
+  * called before killed
+  * need to store data, preference
+
+## access level
+* open: access over module and can be subclassed
+* public: access over module and cannot be subclassed
+* internal: access inside module
+* file private: access inside own file
+* private: access inside itself
+
+## @noescape @escape
+* @noescape is default
+  * cannot store closure
+  * life time is same at the func
+* @escaoe
+  * can store closure and excute later
+
+## map, flatmap
+* map: convert
+* flatMap: convert and flatten array
+
+## filetr, reduce
+* filter: filter array which meets condition
+* reduce: merge in some manner
+
+## What is type alias
+* define type
+
+## What is forced unwrapping
+* `!`
+* not recommended
+
+## What is optional binding
+* unwrap optional value is possible
+  * if let x = x { something }
+
+## ternary conditional operator
+* a ? b : c
+
+## What is nil-coalescing
+* a ?? b
+
+## `inout`
+* is passed by refernce
+
+## lazy properties
+* define at first used
+* undefined<T>() -> T { fatalerror() }
+* can't use with let
+* can't use computed
+  * used for initialization
+
+## property observers
+* willset, didset
+
+## type property
+* static var: cannot override
+* class var: overridable
+
+## Explain implicity assgned raw values
+* automatically assigned raw value of enum which is string or int 
 
 ## Refs.
 https://www.udemy.com/course/complete-reference-ios-interview-questions-part-2/
