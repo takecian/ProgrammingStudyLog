@@ -66,6 +66,8 @@ iOS app state are
 * Suspended
   * is in memory but not running code
 
+* https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle
+
 ### What UIKit
 * framework provicdes app's user interface such as UILabel, UIWindow
 * also provides window, animation
@@ -590,9 +592,171 @@ Overriding the canBecomeFirstResponder.
 ## Explain implicity assgned raw values
 * automatically assigned raw value of enum which is string or int 
 
+## delegate and notification
+* delegate
+  * one to one
+  * can get response
+  * check syntax passed data at complile time
+* notification
+  * one to many
+  * cannot receive feedback
+  * no check syntax passed data at complile time
+
+## shallow copy and deep copy
+* shallow copy
+  * 
+* deep copy
+
+## atomic vs nonatomic
+* atomic
+  * getter/setter is blocked to prevent processed at the samt ime
+* non atomic
+  * faster
+
+## isKindOfClass
+* isKindOfClass
+  * check that an instance of the specified class or an instance of any class that inherits from the specified class
+* isMemberOfClass
+  * check that class or not
+* isSubclassOfClass
+  * check that class that inherits from the specified class
+
+## addtargetg
+* method on UIControll
+  * fire func for selected action
+
+## delegate and target/action
+* delegate
+  * can have multiple methods
+  * can two way communication
+* target/action
+  * used as event action
+  * one way communication
+
+## Stack and heap
+* stack
+  * fast
+* heap
+  * slow compared to stack(と言われてるけどわからん))
+
+## Static / Dynamic library
+* static
+  * embed app
+  * larger size on disk
+  * might be slower launch time
+* dinamic
+  * load lib at run time
+  * can be updated withou app build
+  * can share
+
+## LLVM / clang
+* Clang is front end of LLVM toolchain
+* LLVM
+  * complie kiban
+    * front end
+    * optimizer
+    * backend
+
+## ARC / framework
+* SDK is a set of software development tools
+* framework is platform
+
+## SOLID
+* Single responsibility
+  * 一つのことだけやる、コードを変更する理由は常に１つ
+* Open/closed principle
+  * 拡張に開き、習性が閉じていること
+* Liskov substituaion
+  * サブクラスはスーパークラスで置き換え可能
+* Interface segregation
+  * インターフェースは明確な役割で分かれていること
+* dependency inversion
+  * DI できるように依存関係を整理する
+
+## implementing storage and persistence
+* userdefault / keychain
+* file
+* Core Data(SQLite), Realm
+
+## How to manage dependency
+* manually
+* cocoapods/carthage/SPM
+
+## what is deeplink
+* a way to pass data to app from scheme
+
+## What is in app purchase products and subscriptions
+* Consumable
+* Non consumable
+* Non renewing subscription
+* Auto renewing subscriptopn
+
+https://developer.apple.com/jp/in-app-purchase/
+
+## encode/decode json
+* Codable = Encodable + Decodable
+
+## Notification center
+* broadcast information
+* for tracking generic events
+
+## AVFoundation framework
+* create/play audio and visual media
+
+
+## Accessibility labal and accessibilityIdentifier
+* Accessibility labal
+  * Used by VoiceOver
+
+* accessibilityIdentifier
+  * Used for UI automation 
+
+## URLSession
+  * Used for download data from internet
+
+## @objc
+* to be avaialbe from objc
+
+## safeArea
+* constraints to keep content from hidden from notch or other bars
+
+## Content offset
+* offset from origin of UIScrollView
+
+## Main Thread Checker
+* Detects invalid use of apple's framework like call from worker thread
+
+## What is iBeacon
+* BLE framework
+  * broadcaster or receiver
+
+## UI developent with storyboard, xib, code
+* Storyboard
+  * easy to construct
+  * difficult code review
+* xib
+  * easy to construct
+  * difficult code review
+* code
+  * a lot of code
+  * easy to view diff
+
+## How to handle sensitive data
+* Basically not be stored on the device
+* store data in keychain
+* other option is use some encryption
+* in addition, communicate only https server 
+
+## Can you add stored property in extension
+* basically no
+* but if use `objc_getAssociatedObject`, it is possible
+
+## 
+
 ## Refs.
 https://www.udemy.com/course/complete-reference-ios-interview-questions-part-2/
 https://www.udemy.com/course/complete-reference-ios-interview-questions-part-3/
+
 
 # Part1
 
@@ -975,6 +1139,9 @@ Inactive — The app is running in the foreground, but not receiving events. An 
 Active — The app is running in the foreground, and receiving events.
 Background — The app is running in the background, and executing code.
 Suspended — The app is in the background, but no code is being executed.
+
+https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle
+
 ## 45- What are the most important application delegate methods a developer should handle?
 The operating system calls specific methods within the application delegate to facilitate transitioning to and from various states. The seven most important application delegate methods a developer should handle are:
 application:willFinishLaunchingWithOptions
