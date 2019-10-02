@@ -113,6 +113,8 @@
 * head の前に Dummy node を作って`dummy.next = head` を使うと便利
   * `while cursor` みたいな感じで走査していく
 * ポインタを２つ用意して異なる速度で動かしてみる
+  * 1つのポインタを 1step, もう一つを 2step ずつ動かすと、早いポインタが最後まで行った時に遅いポインタは真ん中にある
+* 先頭からポインタを逆向きに書き換えながら進めるとリバースさせることができる  
 * 再帰と組み合わせて解くパターン
   * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 * 先頭から走査していって、不要なものを取り除くパターン、next を書き換えるタイミングに注意
@@ -124,6 +126,8 @@
 
 * 括弧の有効判定に stack を使う
   * https://leetcode.com/problems/valid-parentheses/
+* 順番を反転させる時にも使える
+  * https://leetcode.com/problems/reverse-only-letters/
 
 ### Graph & Tree
 
