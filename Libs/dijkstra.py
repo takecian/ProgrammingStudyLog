@@ -39,7 +39,7 @@ class Dijkstra:
 
         # startノードを優先度付きキューに入れる、タプル最初の要素が優先度順で並べ替えられる
         self.Q = []
-        heappush(self.Q, (self.dist[start], start))
+        heappush(self.Q, (0, start))
 
         while self.Q:
             # 優先度（距離）が最小であるキューを取り出す
