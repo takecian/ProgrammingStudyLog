@@ -1,5 +1,9 @@
 # iOS App architecture
 
+https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
+
+* Common strategy is to divide concerns such as UI, business logic, model(Persistence)
+
 ## MVC
 Model-View-Controller
 * Traditional
