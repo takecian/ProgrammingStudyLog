@@ -164,7 +164,11 @@ iOS app state are
 * Provide low level API to run task concurrently
   * manage threads instead of developers
 * Dispatch queue
-* Main dispatch queue
+  * Main dispatch queue
+    * Run on main thread
+  * Global dispatch queue
+    * Has priority
+    * Run on worker thread
 * Serial deispatch que: run one task at the same time
 
 ### Why use GCD?
