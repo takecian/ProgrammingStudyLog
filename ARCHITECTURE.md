@@ -22,6 +22,8 @@ Model-View-ViewModel
 
 ## Clean architecture
 
+
+
 ## 
 
 
