@@ -136,8 +136,17 @@
   * 最短経路探索に使う
   * 全部の経路のコストが正
   * heapq(優先度付きque)を使って実装する
+* ベルマンフォード
+  * 始点→終点の最短経路をO(edge**2)
+  
 * ワーシャルフロイド法
-  * 全２点間の経路を探す
+  * 全２点間の経路を探す、O(n**3)
+  ```
+  for k in range(n):  # 中間点
+    for i in range(n): # 始点
+      for j in range(n):  # 終点
+         distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j])
+  ```
 * UnionFind で連結判定できないか
   * 辺を追加していくことしかできないので、辺を削除する話があったら reverse して考える
   * 最小全域木はクラスカル法で解く時に UnionFind を使う
