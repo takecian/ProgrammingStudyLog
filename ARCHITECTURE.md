@@ -37,6 +37,9 @@ Model-View-ViewModel
 * Bindings between View and ViewModel
   * binding が MVVM と MVP の違い
 
+画面遷移のために Coordinator が追加され、MVVM-C で実装するケースも。
+https://hackernoon.com/how-to-use-mvvm-coordinators-and-rxswift-7364370b7b95
+
 ### responsibilities
 |Component|Role|
 |:--|:--|
@@ -63,6 +66,8 @@ Store が reducer と state を保持して、Actionが発行されると reduce
 
 ## Clean architecture
 
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
 GUI以外の部分も役割に合わせて分割したシステムアーキテクチャ。MV-X のGUIアーキテクチャと組み合わせて使うことができる。 
 
 例：MVVM + Clean architecture, UI 部分を MVVM で構築して、Model 部分を UsecaseやEntityに分割して実装する。
@@ -77,7 +82,7 @@ GUI以外の部分も役割に合わせて分割したシステムアーキテ�
 
 ## VIPER
 
-Clean architecture の派生。
+Clean architecture の派生。画面遷移が考慮され Router が追加されているイメージ。
 
 ### responsibilities
 |Component|Role|
