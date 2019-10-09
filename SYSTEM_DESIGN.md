@@ -1,5 +1,90 @@
 # System design study
 
+## Prepare for Your Google Interview: Systems Design
+
+https://www.youtube.com/watch?v=Gg318hR5JY0
+
+20分で最初のソリューションを出す
+* Communication
+  * understanding problem
+  * designing
+  * think it loud
+  * ask clarify
+* scaling data
+  * must be scalable
+  * how can we tell hta the system is working?
+  * is there a bottleneck in the design?
+  * how do the component together
+  * how to shared
+* System properties
+  * latency
+  * throughput
+  * storage
+* concrete
+  * cost of operation
+    * read from disk
+    * read from memory
+    * local area network
+    * continental network
+ * sharding data
+ * replication
+ * write ahead logging
+ * load distribution 
+ * separating data and meta data storage
+* trade off and compromise
+  * rotating disk?
+  * flash drive?
+* best practice
+  * explain
+  * clarify
+  * improve
+  * practice
+
+### Note
+* Requirement の整理
+  * 単語で書くより文章で「〜できる」って書いた方が分かりやすい
+  * 例：「他のユーザーと友達になれる」「他のユーザーと１対１でチャットができる」
+* ロードバランサーの設置、TLS termination の実施
+* アプリサーバの水平スケーリング
+* DB の master-slave 化
+* DB の sharding
+* 画像を使うとしたらリサイズするサーバーが必要
+  * アップロード時にリサイズするか
+    * タスク管理するMessage Queue、リサイズする worker server が必要
+  * 画像リクエストされた時にリサイズするか→この場合キャッシュ必須
+* 画像な S3 のような Object storage に置いて CDN にアクセスさせる
+  * Object storage を HDD にするか SSD にするか
+* キャッシュした方がいい場所はないか
+
+## Numbers
+|Latency Comparison Numbers (~2012)||||
+|:--|:--|:--|:--|
+|L1 cache reference |                          0.5 ns||||
+|Branch mispredict  |                          5   ns||||
+|L2 cache reference |                          7   ns   | |                  14x L1 cache|
+|Mutex lock/unlock  |                         25   ns||||
+|Main memory reference|                      100   ns|            |          20x L2 cache, 200x L1 cache|
+|Compress 1K bytes with Zippy|             3,000   ns|        3 us||
+|Send 1K bytes over 1 Gbps network|       10,000   ns|       10 us||
+|Read 4K randomly from SSD*         |    150,000   ns|      150 us |         ~1GB/sec SSD|
+|Read 1 MB sequentially from memory |    250,000   ns|      250 us||
+|Round trip within same datacenter  |    500,000   ns|      500 us||
+|Read 1 MB sequentially from SSD*   |  1,000,000   ns|    1,000 us|    1 ms,  ~1GB/sec SSD, 4X memory|
+|Disk seek                          | 10,000,000   ns|   10,000 us|   10 ms,  20x datacenter roundtrip|
+|Read 1 MB sequentially from disk   | 20,000,000   ns|   20,000 us|   20 ms,  80x memory, 20X SSD|
+|Send packet CA->Netherlands->CA    |150,000,000   ns|  150,000 us|  150 ms| 
+
+最近のSSD,HDDだと読み込み速度で
+* メモリ：20GB/sec とかある
+* SSD: 2GB/sec とかある
+* HDD: 200MB/sec とかある
+
+* データセンターのネットワークは 100Gbps とか？
+  * https://businessnetwork.jp/Detail/tabid/65/artid/6473/Default.aspx
+
+* 4G は 160Mbps -> 20MB/sec とか？
+  * 場所とかキャリアで大きく変わりそうだけど計算上楽だから 20MB/sec で考える
+
 ## システム設計を進め方
 
 ## システムの概要、要件をまとめる
