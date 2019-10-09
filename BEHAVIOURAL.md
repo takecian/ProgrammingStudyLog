@@ -1,5 +1,50 @@
 # Behavioural
 
+## Prepare for your Google Interview
+
+https://www.youtube.com/watch?v=eIMR82oO2Dc
+
+* Ask clarifying questions
+  * Objectives
+  * Prerequisition
+* Make logical assumptions
+  * 現実的な仮定をおく
+* Solution を話す
+  * 始まりから終わりまで
+  * Pros and cons も考える
+* どう評価するかを話す 
+
+### 評価項目
+* 問題を理解したか
+* 明確にするために質問をしたか
+* ステークホルダーや関連する情報・変数を考慮しているか
+* 複数の案を出したか
+* その中でちゃんとした理由でベストな案を選んだか
+* 問題に対するヒントやフィードバックを取り入れたか
+
+## Leadership
+https://www.youtube.com/watch?v=2Cr3-et4xkI
+
+* Define clear goals
+* Develop a plan
+* Delegate tasks
+* Manage progress
+* Maintain focus
+
+## Google core values
+https://www.google.com/about/philosophy.html?hl=ja
+
+1. ユーザーに焦点を絞れば、他のものはみな後からついてくる。
+2. 1 つのことをとことん極めてうまくやるのが一番。
+3. 遅いより速いほうがいい。
+4. ウェブ上の民主主義は機能する。
+5. 情報を探したくなるのはパソコンの前にいるときだけではない。
+6. 悪事を働かなくてもお金は稼げる。
+7. 世の中にはまだまだ情報があふれている。
+8. 情報のニーズはすべての国境を越える。
+9. スーツがなくても真剣に仕事はできる。
+10. 「すばらしい」では足りない。
+
 ## Goals
 Interview needs to assess candidates's, 
 * Self-awareness
