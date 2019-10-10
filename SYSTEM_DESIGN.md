@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=Gg318hR5JY0
   * ask clarify
 * scaling data
   * must be scalable
-  * how can we tell hta the system is working?
+  * how can we tell how the system is working?
   * is there a bottleneck in the design?
   * how do the component together
   * how to shared
@@ -22,10 +22,10 @@ https://www.youtube.com/watch?v=Gg318hR5JY0
   * storage
 * concrete
   * cost of operation
-    * read from disk
-    * read from memory
-    * local area network
-    * continental network
+    * read from disk 200MB/s
+    * read from memory 2GB/s
+    * local area network 1Gbps -> 100MB/s
+    * continental network RTT 150ms
  * sharding data
  * replication
  * write ahead logging
