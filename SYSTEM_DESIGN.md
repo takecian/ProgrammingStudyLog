@@ -56,6 +56,10 @@ https://www.youtube.com/watch?v=Gg318hR5JY0
   * Object storage を HDD にするか SSD にするか
 * キャッシュした方がいい場所はないか
 
+## Software Engineering Advice from Building Large-Scale Distributed Systems from Jeff Dean
+
+https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf
+
 ## Numbers
 |Latency Comparison Numbers (~2012)||||
 |:--|:--|:--|:--|
@@ -81,11 +85,12 @@ https://www.youtube.com/watch?v=Gg318hR5JY0
 
 * データセンターのネットワークは 100Gbps とか？
   * https://businessnetwork.jp/Detail/tabid/65/artid/6473/Default.aspx
+* 1Gbps でサーバー間通信をすると仮定すると 120MB/s
 
-* 4G は 160Mbps -> 20MB/sec とか？
-  * 場所とかキャリアで大きく変わりそうだけど計算上楽だから 20MB/sec で考える
+* 4G は 80Mbps -> 10MB/sec とか？
+  * 場所とかキャリアで大きく変わりそうだけど計算上楽だから 10MB/sec で考える
 
-## システム設計を進め方
+## システム設計の進め方
 
 ## システムの概要、要件をまとめる
 * 誰が使うのか
@@ -139,28 +144,6 @@ https://www.youtube.com/watch?v=Gg318hR5JY0
 * 秒数
   * 一日86400秒
   * 一ヶ月約250万秒
-  
-* Various operations time
-
-|Operations|Time|
-|:--|:--|
-| execute typical instruction |	1/1,000,000,000 sec = 1 nanosec| 
-| execute typical instruction |	1 microsec = 1000 nanosec| 
-| execute typical instruction |	1 millsec = 1000 microsec| 
-| fetch from L1 cache memory | 0.5 nanosec| 
-| branch misprediction | 5 nanosec| 
-| fetch from L2 cache memory | 7 nanosec| 
-| Mutex lock/unlock | 25 nanosec| 
-| fetch from main memory | 100 nanosec| 
-| send 2K bytes over 1Gbps network | 20,000 nanosec| 
-| read 1MB sequentially from memory | 250,000 nanosec| 
-| fetch from new disk location (seek) | 8,000,000 nanosec| 
-| read 1MB sequentially from disk | 20,000,000 nanosec| 
-| send packet US to Europe and back | 150 milliseconds = 150,000,000 nanosec| 
-
-
-
-http://norvig.com/21-days.html#answers
 
 ## Ref.
 * https://www.hiredintech.com
