@@ -8,3 +8,12 @@ class Solution:
 
             num_and_index[nums[i]] = i
 
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        expected = {}
+        for i in range(len(nums)):
+            if nums[i] in expected:
+                return [expected[nums[i]], i]
+
+            expected[target - nums[i]] = i
