@@ -40,3 +40,42 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if not nums:
+            return -1
+
+        sl = 0
+        sr = len(nums) - 1
+        if nums[0] > nums[-1]:
+            l = 0
+            r = len(nums) - 1
+            while r - l > 1:
+                m = (l + r) // 2
+                if nums[l] < nums[m]:
+                    l = m
+                else:
+                    r = m
+
+            if nums[0] <= target:
+                sr = l
+            else:
+                sl = r
+
+        while sl <= sr:
+            m = (sl + sr) // 2
+            if nums[m] == target:
+                return m
+            if nums[m] < target:
+                sl = m + 1
+            else:
+                sr = m - 1
+
+        return -1

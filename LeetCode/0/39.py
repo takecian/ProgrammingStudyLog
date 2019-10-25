@@ -14,3 +14,27 @@ class Solution:
             return next_ptn
 
         return pattern(candidates, target)
+
+
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        ans = []
+
+        def try_patterns(ptn, rest):
+            if rest == 0:
+                ans.append(ptn)
+            else:
+                for c in candidates:
+                    if len(ptn) == 0 or ptn[-1] <= c:
+                        if c <= rest:
+                            try_patterns(ptn + [c], rest - c)
+
+        try_patterns([], target)
+
+        return ans
+
