@@ -30,6 +30,15 @@ class Solution:
         return ans
 
 
+    def maxProfit2(self, prices) -> int:
+        profit = 0
+
+        for i in range(1, len(prices)):
+            profit += max(0, prices[i] - prices[i - 1])
+
+        return profit
+
+
 def main():
     s = Solution()
     print(s.maxProfit([2,1,2,0,1]))
