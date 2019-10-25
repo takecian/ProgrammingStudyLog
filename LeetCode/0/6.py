@@ -30,6 +30,34 @@ class Solution:
 
         return ''.join(answer)
 
+    def convert2(self, s: str, numRows: int) -> str:
+        strings = [[] for _ in range(numRows)]
+
+        index = 0
+        isDown = True
+        for c in s:
+            strings[index].append(c)
+
+            if numRows > 1:
+                if isDown:
+                    if index == numRows - 1:
+                        index -= 1
+                        isDown = False
+                    else:
+                        index += 1
+                else:
+                    if index == 0:
+                        index += 1
+                        isDown = True
+                    else:
+                        index -= 1
+
+        ans = ''
+        for sl in strings:
+            ans += ''.join(sl)
+
+        return ans
+
 
 if __name__ == '__main__':
     s = Solution()
