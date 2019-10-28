@@ -15,7 +15,7 @@ class Solution:
 
 from collections import defaultdict
 import bisect
-
+class Solution2:
     def isSubsequence2(self, s: str, t: str) -> bool:
 
         charindex = defaultdict(list)
