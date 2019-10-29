@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 def fourNumberSum(array, targetSum):
     # Write your code here.
     n = len(array)
