@@ -71,7 +71,13 @@
 
 #### 文字列
 * 回転する string の substring → string + string に対して含まれるか調べる 
-
+* 単語の検索はトライ木を作る
+```
+class TrieNode:
+    def __init__(self):
+        self.children = collections.defaultdict(TrieNode)
+        self.isWord = False
+```
 #### 配列
 
 * Sort したら簡単に解けないか
@@ -136,6 +142,10 @@
   * 最短経路探索に使う
   * 全部の経路のコストが正
   * heapq(優先度付きque)を使って実装する
+  * 経路が必要な場合はあるノードの一つ前のノードを挿す配列を作って埋めながら進める
+```
+prev_nodes = [None] * n
+```
 * ベルマンフォード
   * 始点→終点の最短経路をO(edge**2)
   
@@ -199,6 +209,8 @@
   * Longest Common Subsequense
 * 最長増加部分列
   * LIS : Longest Increasing Subsequense
+    * 二分探索しながら（ソートしながら）増加部分列を作っていく
+    * 部分列の和の最大値とか聞かれたら二分探索じゃなだめ、n**2 ループで計算しながらやる必要がある
   * 挿入ソートする時の操作の回数とかもこれ
 
 #### 最大長
