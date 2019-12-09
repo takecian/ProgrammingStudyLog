@@ -3,6 +3,7 @@
 ## Setup
 
 ```
-pip install -r requirements.txt
+brew install pipenv
+pipenv install
 ```
 
