@@ -11,6 +11,7 @@ pandas = "*"
 xgboost = "*"
 scikit-learn = "*"
 matplotlib = "*"
+jupyterlab = "*"
 
 [requires]
 python_version = "3.7"
