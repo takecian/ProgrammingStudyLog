@@ -12,6 +12,7 @@ xgboost = "*"
 scikit-learn = "*"
 matplotlib = "*"
 jupyterlab = "*"
+kaggle = "*"
 
 [requires]
 python_version = "3.7"
