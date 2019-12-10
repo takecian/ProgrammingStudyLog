@@ -37,6 +37,8 @@ GBDT(Gradient Boosting Decision Tree)が使われることが多い。
   * binning
     * 数値変数をある区間ごとにグループ分けしてカテゴリ変数にしてしまう
 * カテゴリ変数(enum)
+  * Label encoding：カテゴリ変数を連番で番号付与する
+  * One hot encoding：カテゴリ変数の数だけカラム追加して０、１つける
 * 日付、時刻
 * 変数の組み合わせ
 
