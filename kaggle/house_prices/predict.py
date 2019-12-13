@@ -18,16 +18,16 @@ def main():
     # テストデータは特徴量のみなので、そのままでよい
     test_x = test.copy()
 
-    necessary_keys = ['1stFlrSF', '2ndFlrSF', 'YearBuilt', 'MSSubClass', 'GarageCars', 'YrSold']
+    necessary_number_keys = ['1stFlrSF', '2ndFlrSF', 'YearBuilt', 'MSSubClass', 'GarageCars', 'YrSold']
+    necessary_num_zero_keys = ['']
 
     labelled_keys = ['MSZoning', 'Street', 'LotShape', 'LandContour', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle', 'RoofStyle','Foundation','BsmtQual','BsmtCond','BsmtExposure','BsmtFinType1','Heating','HeatingQC','CentralAir','Electrical','KitchenQual','Functional','GarageType', 'GarageFinish','GarageQual','Fence','SaleType','SaleCondition']
     # 不要カラムの削除
-    unnecessary_keys = ['Id', 'Alley', 'Utilities', 'LotConfig', 'LandSlope', 'Neighborhood', 'RoofMatl','Exterior1st','Exterior2nd','MasVnrType', 'ExterQual', 'ExterCond','BsmtFinType2','BsmtFinSF2','1stFlrSF','2ndFlrSF','FireplaceQu','GarageCond','PavedDrive','PoolQC','MiscFeature']
-    train_x = train_x[necessary_keys + labelled_keys]
-    test_x = test_x[necessary_keys + labelled_keys]
+    train_x = train_x[necessary_number_keys + labelled_keys]
+    test_x = test_x[necessary_number_keys + labelled_keys]
 
     concat_x = pd.concat([train_x, test_x], axis=0)
-    for col in necessary_keys:
+    for col in necessary_number_keys:
         train_x[col].fillna(concat_x[col].mean(), inplace=True)
         test_x[col].fillna(concat_x[col].mean(), inplace=True)
 
