@@ -7,6 +7,12 @@ brew install pipenv
 pipenv install
 ```
 
+## Use jupyter notebook
+
+```
+jupyter notebook
+```
+
 ## 用語
 |用語|意味|
 |:--|:--|
