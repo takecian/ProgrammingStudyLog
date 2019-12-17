@@ -80,3 +80,4 @@ GBDT(Gradient Boosting Decision Tree)が使われることが多い。
 ### 次元削減、教師なし学習
 
 ### その他のテクニック
+* ラグ特徴量
