@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Objective-C
 
 ## Overview
@@ -75,4 +76,20 @@ protocol buffer でシリアライズ/でシリアライズしたデータをや
 Objc で使用する場合は自分で podspec を作ってそこで指定するフォルダに .proto ファイルをおく。
  
 
+=======
+# Objective-C Note
+
+* http://google.github.io/styleguide/objcguide.html
+* https://raimon49.github.io/2015/03/21/review-nytimes-objective-c-style-guide.html
+
+## クラス定義
+
+* `@interface` を自身のヘッダファイル以外で書くこともできる（カテゴリのこと）
+
+### インスタンス変数
+
+* `@property` をつけるとプロパティの getter/setter を作ってくれる
+    * `@systhesis`をつけなければプロパティの実体（インスタンス変数）を `_` 付きの名前で作ってくれる
+    * `@systhesis`をつけるとプロパティの実体を紐づけることができる → あまり使わない
+>>>>>>> Update objc note
 
