@@ -93,3 +93,55 @@ Objc で使用する場合は自分で podspec を作ってそこで指定する
     * `@systhesis`をつけるとプロパティの実体を紐づけることができる → あまり使わない
 >>>>>>> Update objc note
 
+### category
+
+* Category can add new functionality to any class even if its class is built in.
+
+```
+@implementation SomeClass (Append)
+
+-(void)tf_doSomethingEx {
+    NSLog(@"doSomethingEx is called.");
+}
+
+@end
+```
+
+#### Class extension
+クラスの実装ファイルに追加できる無名カテゴリのこと。隠蔽しておきたい変数の宣言とかに使える。
+
+```
+@interface SomeClass ()
+
+@property NSString* firstName;
+
+@end
+
+```
+### Protocols
+Swift の protocol とほとんど同じ。けど protocol conformance が必須じゃない。
+
+### Nullability
+
+nullability annotation で明示する。明示するだけなので実際にそう動くかは自分でチェックしとかないといけない。
+```
+-(NSString*)loadStr;
+```
+
+* nullable → `?` になる
+```
+-(nullable NSString*)loadStr;
+loadStr() -> String?
+```
+* nonnull → 無印
+```
+-(nullable NSString*)loadStr;
+loadStr() -> String
+```
+* 未指定 -> IOU になる
+```
+-(nullable NSString*)loadStr;
+loadStr() -> String!
+```
+マクロでも指定できる。
+NS_ASSUME_NONNULL_BEGIN と NS_ASSUME_NONNULL_END
