@@ -3,6 +3,7 @@
 
 ## Overview
 * C 言語の Super set
+  * C言語はそのまま動く
 * Smalltalk の発展した言語
 
 ## import はできるだけ実装側で行う
@@ -18,7 +19,7 @@
 @end 
 ```
 
-実装ファイル側で import する
+実装ファイル側で import する。ビルド時に不要なファイル参照がなくなる。
 
 ```objc
 #import "OtherClass.h"
@@ -145,3 +146,62 @@ loadStr() -> String!
 ```
 マクロでも指定できる。
 NS_ASSUME_NONNULL_BEGIN と NS_ASSUME_NONNULL_END
+
+## Preprocessor
+Objective-C のビルドは複数のプロセスからなる。
+最初に処理されるのが Preprocessor
+
+マクロは preprocessor で処理される code fragment replacement.
+```
+#define M_PI 3.1415926535897932384626
+```
+`#undef M_PI` でマクロを消せる。
+
+### Conditional compilation
+
+`#ifdef`, `#if` `#else`, `#endif`とかでコードをコンパイルするかどうか切り替えられる。
+
+シミュレータでだけ有効なコードとか書ける。
+
+プラットフォームが提供するマクロもある。
+* TARGET_OS_IPHONE
+* TARGET_OS_IOS
+* TARGET_OS_MAC
+* TARGET_OS_SIMULATOR
+
+predefined なマクロもある
+* DEBUG
+* __DATE__
+* __TIME__
+* __FILE__
+* __LINE__
+
+```
+#define let __auto_type const
+#define var __auto_type
+```
+このマクロを使うと Objc の変数宣言を Swift っぽくかけたりする。
+
+### Metadata macros
+* #warning
+* #error
+* #paragma
+
+
+## Naming conventions
+命名規則があるのでそれに合わないものはエラーになる。
+
+* `alloc` methods must return a retainable object pointer type.
+* `copy` methods must return a retainable object pointer type.
+* `mutableCopy` methods must return a retainable object pointer type.
+* `new` methods must return a retainable object pointer type. 
+* `init` methods must be instance methods and must return an Objective-C pointer type. Additionally, a program is ill-formed if it declares or contains a call to an init method whose return type is neither id nor a pointer to a super-class or sub-class of the declaring class (if the method was declared on a class) or the static receiver type of the call (if it was declared on a protocol).
+
+## autorelesepool
+
+通常は run loop が一回処理が終わったタイミングで autorelease されているオブジェクトを解放する。
+けどそれよりもっと早い段階で解放したいケースがある。そんな時に `@autoreleasepool` で囲って、
+そのスコープから出たらそのスコープ内で生成した autorelease オブジェクトを解放する。
+
+## Objective-C++
+
