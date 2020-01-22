@@ -205,3 +205,16 @@ predefined なマクロもある
 
 ## Objective-C++
 拡張子を `mm` にして使うけど難しいので非推奨。
+
+## メッセージの転送
+オブジェクトに理解不能な（実装されてないメソッド）のメッセージが送られてきたときに発生する。
+
+1. resolveInstanceMethod/resolveClassMethod
+1. forwaringTargetForSelector
+1. forwardInvocation -> doesNotRecognizeSelector でクラッシュ
+
+の順で処理される。
+
+## Swizzling
+メソッドを入れ替えることができる。
+デバッグ以外で使っちゃダメ。
