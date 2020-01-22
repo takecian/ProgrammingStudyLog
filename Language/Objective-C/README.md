@@ -1,10 +1,21 @@
-<<<<<<< HEAD
 # Objective-C
+* http://google.github.io/styleguide/objcguide.html
+* https://raimon49.github.io/2015/03/21/review-nytimes-objective-c-style-guide.html
 
 ## Overview
 * C 言語の Super set
   * C言語はそのまま動く
 * Smalltalk の発展した言語
+
+## クラス定義
+
+* `@interface` を自身のヘッダファイル以外で書くこともできる（カテゴリの特殊なもの。class extension とかともいう）
+
+### インスタンス変数
+
+* `@property` をつけるとプロパティの getter/setter を作ってくれる
+    * `@systhesis`をつけなければプロパティの実体（インスタンス変数）を `_` 付きの名前で作ってくれる
+    * `@systhesis`をつけるとプロパティの実体を紐づけることができる → あまり使わない
 
 ## import はできるだけ実装側で行う
 
@@ -44,8 +55,9 @@ NSNumber* someNumber = @1;
 NSString* dog = animals[1];
 
 NSDictionary* dic = @{ @"age" : @28, @"firstName": @"Chie"}
-
 ```
+
+この構文はプリミティブな型をオブジェクトにラップする時に使う。
 
 ## プリプロセッサマクロではなく型付定数を使おう
 
@@ -53,9 +65,12 @@ NSDictionary* dic = @{ @"age" : @28, @"firstName": @"Chie"}
 
 `static const NSTimeInterval kAnimeDuration = 0.3` とすると型の情報が含まれる。グローバルに定義すべきものではない場合は実装ファイル側に書こう。　
 
+実装ファイル内でのみ使う定数は実装ファイル内に `static const` で定義する。
+
 共通で利用したい定数の場合は
-* ヘッダファイルに `extern` をつけて宣言
+* ヘッダファイルに `extern` をつけて h ファイルで宣言
 * 実装ファイルに定義をする
+
 ```objc
 extern NSString* const someString;
 
@@ -66,7 +81,6 @@ NSString* const someString = @"text text";
 
 switch 文で使う時は `default` の使用は避ける。後から追加した時に処理が漏れるかもしれない。
 
-
 # gRPC
 
 https://grpc.io/
@@ -76,24 +90,6 @@ protocol buffer でシリアライズ/でシリアライズしたデータをや
 ## Objc
 Objc で使用する場合は自分で podspec を作ってそこで指定するフォルダに .proto ファイルをおく。
  
-
-=======
-# Objective-C Note
-
-* http://google.github.io/styleguide/objcguide.html
-* https://raimon49.github.io/2015/03/21/review-nytimes-objective-c-style-guide.html
-
-## クラス定義
-
-* `@interface` を自身のヘッダファイル以外で書くこともできる（カテゴリのこと）
-
-### インスタンス変数
-
-* `@property` をつけるとプロパティの getter/setter を作ってくれる
-    * `@systhesis`をつけなければプロパティの実体（インスタンス変数）を `_` 付きの名前で作ってくれる
-    * `@systhesis`をつけるとプロパティの実体を紐づけることができる → あまり使わない
->>>>>>> Update objc note
-
 ### category
 
 * Category can add new functionality to any class even if its class is built in.
@@ -183,10 +179,14 @@ predefined なマクロもある
 このマクロを使うと Objc の変数宣言を Swift っぽくかけたりする。
 
 ### Metadata macros
-* #warning
-* #error
-* #paragma
 
+このマクロを使うとコンパイラでエラーを発生させたりできる。
+
+* `#warning`
+* `#error`
+
+コードをグルーピングする時に使う。
+* `#pragma`
 
 ## Naming conventions
 命名規則があるのでそれに合わないものはエラーになる。
@@ -204,4 +204,4 @@ predefined なマクロもある
 そのスコープから出たらそのスコープ内で生成した autorelease オブジェクトを解放する。
 
 ## Objective-C++
-
+拡張子を `mm` にして使うけど難しいので非推奨。
