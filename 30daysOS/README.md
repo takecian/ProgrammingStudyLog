@@ -4,8 +4,11 @@
 
 Mac Catalina
 
+アセンブラ(nasm)も64bit 対応じゃないと動作しないので注意。
+
 ```
 brew install qemu
+brew install nasm
 ```
 
 ## Run OS
