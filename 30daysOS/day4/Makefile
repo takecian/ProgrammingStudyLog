@@ -1,8 +1,9 @@
-TOOLPATH = ../../z_tools/
-INCPATH  = ../../z_tools/haribote/
+TOOLPATH = ../z_tools/
+INCPATH  = ../z_tools/haribote/
 
 MAKE     = make -r
 NASK     = $(TOOLPATH)nask
+NASM     = nasm
 CC1      = $(TOOLPATH)gocc1 -I$(INCPATH) -Os -Wall -quiet
 GAS2NASK = $(TOOLPATH)gas2nask -a
 OBJ2BIM  = $(TOOLPATH)obj2bim
@@ -13,18 +14,18 @@ IMGTOL   = $(TOOLPATH)imgtol
 COPY     = cp
 DEL      = rm -f
 
-# ƒfƒtƒHƒ‹ƒg“®ì
+# ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå‹•ä½œ
 
 default :
 	$(MAKE) img
 
-# ƒtƒ@ƒCƒ‹¶¬‹K‘¥
+# ãƒ•ã‚¡ã‚¤ãƒ«ç”Ÿæˆè¦å‰‡
 
 ipl10.bin : ipl10.nas Makefile
-	$(NASK) ipl10.nas ipl10.bin ipl10.lst
+	$(NASM) ipl10.nas -o ipl10.bin -i ipl10.lst
 
 asmhead.bin : asmhead.nas Makefile
-	$(NASK) asmhead.nas asmhead.bin asmhead.lst
+	$(NASM) asmhead.nas -o asmhead.bin -i asmhead.lst
 
 bootpack.gas : bootpack.c Makefile
 	$(CC1) -o bootpack.gas bootpack.c
@@ -33,10 +34,10 @@ bootpack.nas : bootpack.gas Makefile
 	$(GAS2NASK) bootpack.gas bootpack.nas
 
 bootpack.obj : bootpack.nas Makefile
-	$(NASK) bootpack.nas bootpack.obj bootpack.lst
+	$(NASM) bootpack.nas -o bootpack.obj -i bootpack.lst
 
 naskfunc.obj : naskfunc.nas Makefile
-	$(NASK) naskfunc.nas naskfunc.obj naskfunc.lst
+	$(NASM) naskfunc.nas -o naskfunc.obj -i naskfunc.lst
 
 bootpack.bim : bootpack.obj naskfunc.obj Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:bootpack.bim stack:3136k map:bootpack.map \
@@ -55,7 +56,7 @@ haribote.img : ipl10.bin haribote.sys Makefile
 		copy from:haribote.sys to:@: \
 		imgout:haribote.img
 
-# ƒRƒ}ƒ“ƒh
+# ã‚³ãƒãƒ³ãƒ‰
 
 img :
 	$(MAKE) haribote.img
