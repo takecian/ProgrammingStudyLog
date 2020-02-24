@@ -157,6 +157,7 @@ prev_nodes = [None] * n
       for j in range(n):  # 終点
          distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j])
   ```
+  
 * UnionFind で連結判定できないか
   * 辺を追加していくことしかできないので、辺を削除する話があったら reverse して考える
   * 最小全域木はクラスカル法で解く時に UnionFind を使う
