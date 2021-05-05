@@ -1,3 +1,4 @@
+use samplecli::*;
 use clap::{App, Arg};
 
 fn main() {
@@ -35,4 +36,11 @@ fn main() {
             "OFF"
         }
     );
+
+    input!{
+        n: usize,
+        m: usize,
+    };
+
+    println!("{}", n);
 }
