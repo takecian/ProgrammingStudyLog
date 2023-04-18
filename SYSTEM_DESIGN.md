@@ -145,6 +145,10 @@ https://static.googleusercontent.com/media/research.google.com/en//people/jeff/s
   * 一日86400秒
   * 一ヶ月約250万秒
 
+# 事例
+
+[秒間120万つぶやきを処理、Twitterシステムの“今”](https://atmarkit.itmedia.co.jp/news/201004/19/twitter.html)
+
 ## Ref.
 * https://www.hiredintech.com
 * https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md

@@ -38,10 +38,10 @@ def LIS(L):
     seq = []
     for i in L:
         pos = bisect(seq,i)
-    if len(seq) <= pos:
-        seq.append(i)
-    else:
-        seq[pos] = i
+        if len(seq) <= pos:
+            seq.append(i)
+        else:
+            seq[pos] = i
     return len(seq)
 
 # 一つの要素と残りのリストを作る時の読み込み
