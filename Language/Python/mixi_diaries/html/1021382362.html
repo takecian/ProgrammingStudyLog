@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>No Title</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .diary-title { font-size: 24px; margin-bottom: 10px; }
+        .diary-date { color: #666; margin-bottom: 20px; }
+        .diary-content { line-height: 1.6; }
+        .diary-footer { margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="diary-title">No Title</div>
+    <div class="diary-date"></div>
+    <div class="diary-content"><div class="viewDiaryBox widget" data-widget-namespace="jp.mixi.diary.pc.photoviewer.widget">
+<div class="listDiaryTitle">
+<dl>
+<dt>今日の一句<span><a href="https://mixi.jp/edit_diary.pl?id=1021382362">編集する</a></span></dt>
+<dd class="date">2008年12月13日01:19<img alt="一部の友人まで公開" height="14" src="https://img.mixi.net/img/basic/icon/pub_level_005.gif" width="95"/>
+</dd>
+<dd class="diaryViewCount">2 view</dd>
+</dl>
+</div>
+<div class="viewerFriendList">
+<p><a href="javascript:void(0)" id="viewerListSwitch">公開している友人一覧</a></p>
+</div>
+<div class="txtconfirmArea">
+<div class="FANCYURL_EMBED widget" data-widget-namespace="jp.mixi.ui.embed.pc.widget.renderer" id="diary_body">符号化と<br/> <br/>それと理論は<br/> <br/>一緒でも<br/> <br/> <br/> <br/>慣れないとしんどいねな話。<br/> <br/> <br/>メールの話。<br/> <br/>その前に小噺として符号化の話。<br/> <br/>パソコンの世界には 0 と 1 しかありません。<br/> <br/>例えば「A」の文字も PC でみれば 0100 0001 という 0 と 1 の羅列なわけで。<br/>この列を PC は「A」という文字として表示(符号化されてる)してるだけで。<br/> <br/>＃厳密には文字コードによって列の値は異なる。<br/>＃この１つの 0 とか 1 とかをビットと呼ぶ。<br/>＃「A」の文字は 8 ビットを使って表しているという。 <br/> <br/> <br/>そんな 0 と 1 の世界でこんな問題が出たとする。<br/> <br/>一週間の天気を 0 と 1 の列を使って示しなさい。<br/>ビット列は短ければ短いほどよい。<br/> <br/>天気は「晴れ」、「曇り」、「雨」、「雪」の４種類だとすると<br/>普通に考えると<br/> <br/>晴れ：00<br/>曇り：01<br/>　雨：10<br/>　雪：11<br/> <br/>と一日の天気を表すのに 2 ビット必要。<br/>つまり一週間に14ビット必要。<br/> <br/> <br/>でも、<br/>例えば 70% の確率で晴れ、20% が曇り、5% で雨、5% で雪という地方だとすると<br/>他にもっといい方法があるのではないかと。<br/> <br/>晴れ：1<br/>曇り：01<br/>　雨：001<br/>　雪：000<br/> <br/>こうすると一週間の天気を並べてもちゃんと天気を識別できる。<br/>しかも一日の天気を表すのに、<br/> <br/>（晴れ）＋（曇り）＋（雨）＋（雪）<br/>1×70% ＋ 2×20% ＋ 3×5% ＋ 3×5% ＝ 1.4<br/> <br/>という計算から平均 1.4 ビットあれば表現できると言える。<br/> <br/>つまり一週間は 9.8 ビット、およそ 10ビットでいけますよ、と。<br/> <br/> <br/>これは符号化について学ぶ時に最初に聞く話だけど、<br/>似たようなことが現実世界で。<br/> <br/> <br/>ほとんどの人はメールを打つとき「かな入力」方式かと。<br/> <br/>「お」を打つときには１を５回押す、普通の方式。<br/> <br/>それともうひとつ、「ツータッチ」方式。<br/> <br/>「お」を打つときには１を押して、５を押す、いわゆるポケベル方式。<br/> <br/> <br/>今日メール打つのめっちゃはええなって人がいて<br/>見たらツータッチ方式で入力してた。<br/> <br/>ポケベル方式は<br/>一文字を基本２タッチで打つ。<br/> <br/>かな入力方式は<br/>一文字を１タッチ〜５タッチまで。<br/> <br/> <br/>英語では e とか i をよく打つって話を聞いたけど<br/>日本語ではどんなもんなんだろう。<br/> <br/>その辺の情報は手元にないけど<br/>とりあえず自分の携帯の文字入力をポケベル方式にしてみた。<br/> <br/> <br/>符号化とかいう以前に打つ速度が急激に低下。<br/>効率化を図る前に慣れることが必要ですな。<br/> <br/> <br/>というわけで携帯でメールうつのがめんどいので以下私信。<br/> <br/>＞なっちゃん＆ダニ<br/>１５日に忘年会やります。<br/>前藤おすすめ板飯屋が候補です。<br/> <br/>１５日１９時に笹塚駅集合。<br/>そんな風味でよろしくどうぞ。<br/></div>
+</div>
+<ul class="actionLink01">
+<li><a class="comment JS_comment" href="#diaryCommentForm">コメント</a></li>
+</ul>
+<p class="reportLink01" style="display: none;"><!--<a href="https://mixi.jp/support_report.pl?keys=774322%3A1021382362&from=https%3A%2F%2Fmixi.jp%2Fview_diary.pl%3Fid%3D1021382362%26owner_id%3D774322&type=diary"><img width="80" height="24" alt="通報する" src="https://img.mixi.net/img/basic/button/report001.gif" /></a> --></p>
+<div class="DIARY_isAnchor" id="feedback"></div>
+<dl class="iineList JS_iineList" style="display:none;">
+<dt>イイネ！<span class="total">（<a href="javascript:void(0);" id="feedbackMemberListButton">0</a>）</span></dt>
+</dl>
+<!--/viewDiaryBox--></div></div>
+    <div class="diary-footer">
+        <p>Exported from mixi.jp on 2025-03-01 23:21:11</p>
+        <p>Original URL: <a href="https://mixi.jp/view_diary.pl?id=1021382362&owner_id=774322">https://mixi.jp/view_diary.pl?id=1021382362&owner_id=774322</a></p>
+    </div>
+</body>
+</html>

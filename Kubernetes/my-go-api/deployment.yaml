@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-go-api-deployment
+spec:
+  replicas: 2 # 希望するPodの数
+  selector:
+    matchLabels:
+      app: my-go-api
+  template:
+    metadata:
+      labels:
+        app: my-go-api
+    spec:
+      containers:
+      - name: my-go-api
+        image: takecian/my-go-api
+        ports:
+        - containerPort: 8080

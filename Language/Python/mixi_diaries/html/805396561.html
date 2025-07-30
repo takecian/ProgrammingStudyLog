@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>No Title</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .diary-title { font-size: 24px; margin-bottom: 10px; }
+        .diary-date { color: #666; margin-bottom: 20px; }
+        .diary-content { line-height: 1.6; }
+        .diary-footer { margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="diary-title">No Title</div>
+    <div class="diary-date"></div>
+    <div class="diary-content"><div class="viewDiaryBox widget" data-widget-namespace="jp.mixi.diary.pc.photoviewer.widget">
+<div class="listDiaryTitle">
+<dl>
+<dt>今日の一句<span><a href="https://mixi.jp/edit_diary.pl?id=805396561">編集する</a></span></dt>
+<dd class="date">2008年05月13日21:09<img alt="一部の友人まで公開" height="14" src="https://img.mixi.net/img/basic/icon/pub_level_005.gif" width="95"/>
+</dd>
+<dd class="diaryViewCount">3 view</dd>
+</dl>
+</div>
+<div class="viewerFriendList">
+<p><a href="javascript:void(0)" id="viewerListSwitch">公開している友人一覧</a></p>
+</div>
+<div class="txtconfirmArea">
+<div class="FANCYURL_EMBED widget" data-widget-namespace="jp.mixi.ui.embed.pc.widget.renderer" id="diary_body">ああマジだ<br/> <br/>社会に出ても<br/> <br/>勉強だ<br/> <br/> <br/> <br/>と、ふとそう思った話。<br/> <br/>最近会社の話ばっかりなんだけど<br/>まぁ月〜金で会社だから仕方ない。<br/> <br/> <br/>んで本題。<br/> <br/>学生時代に、<br/> <br/>「こんなん社会に出てから必要になるかいな」<br/> <br/>と愚痴りながら勉強してた記憶が誰にでもあるかと。<br/> <br/> <br/>幼いころの話で言えば分数だったり、<br/>高校ぐらいだったら三角関数だったり物理だったり。<br/> <br/> <br/>最近の話で言えば大学時代にやった２進数とかの話。<br/> <br/>２進数：０と１だけで数字を表そうとかっていうあれ。<br/>１バイト(８ビットの場合)、<br/>１だったら"００００　０００１"で<br/>２だったら"００００　００１０"で<br/>３だったら"００００　００１１"みたいなあれ。<br/> <br/>ちなみに−１だったら"１１１１　１１１１"とかってあれ。<br/> <br/> <br/>大学の時は「へー、おもろいけどだからどうしたって感じだよな、<br/>これで食っていけるようなるんかいなー」<br/>とか受け流し気味で授業受けてたけど、<br/> <br/> <br/> <br/>活きたわ。<br/> <br/>今日仕事で。<br/> <br/> <br/>↓は読んでる人を少し置いてきぼりにしてる感があるけど<br/>しょせん自己満足日記なのでさらっと流してもらえれば。<br/> <br/> <br/>/* ******** 置いてきぼり　ここから **********************<br/>とあることで文字列を１６進表示にせんといけんことがって、<br/>データ変換しようとしてたけど、<br/>なぜか文字コード 0x83 の文字を１６進変換したら 0xFFFFFF83 になる不思議。<br/> <br/>コードが 0x43 とか 0x63 のやつはちゃんと変換されるのに。<br/>なんだこれ。<br/> <br/>と悩んだあげく１バイトの格納場所から４バイトスペースに格納するのに<br/>３バイト分の空きができてそこをビット拡張してたからだと気付いた。<br/> <br/>参考：ビット拡張。ビット(桁数)増やす時に最上位ビットと同じ値を<br/>用いないとダメですよ、なやつ。<br/> <br/>例：８ビットから１６ビットへの拡張：３の場合<br/>８ビット：００００　００１１<br/> <br/>１６ビット：００００　００００　００００　００１１<br/> <br/> <br/>例：８ビットから１６ビットへの拡張：−３の場合<br/>８ビット：１１１１　１１０１<br/> <br/>１６ビット：１１１１　１１１１　１１１１　１１０１<br/> <br/> <br/>こうしないと値が変わってしまうんですよってやつ。<br/> <br/> <br/>気付いた時に「あー、授業でやってたわ、これ」と。<br/> <br/>参考：0x83 は２進で書くと"１０００　００１１"、最上位が"１"。<br/>だから４バイトで書くと、<br/>"１１１１　１１１１　１１１１　１１１１　１１１１　１１１１　１０００　００１１"<br/>これで 0xFFFFFF83 になる。<br/> <br/> <br/>なるほど。<br/>てか符号なし変数として扱えば問題なかったって話なわけですが。<br/> <br/> ******** 置いてきぼり　ここまで ********************** */<br/> <br/>とにかく人生知っといて損なことなんてほとんどないですよってことですか。<br/> <br/>ほんま毎日勉強。<br/>大学とか研究室で少しプログラミングかじったとか<br/>思った気もせんこともないけどザコですわ。<br/> <br/> <br/> <br/>話変わって体調の話。<br/>最近あったかい日だったり寒い日だったり。<br/> <br/> <br/>知ってる人はおると思うけど３月に広島で出店してた<br/>あいのりのヒデがやってるお店で買った指輪をずっとしてるんだけども。<br/> <br/>体温で色が変わるやつでたいていが下のような青色で。<br/><img alt="フォト" border="0" class="photoThumbnail COMPONENT_diaryPhotoInline--small" id="photo_342247929" src="https://photoservice-imagecluster.img.mixi.jp/v/cf4f61ea64cc7f52217b7ed4d714831e58395a170f/67c3128d/photo/picture/774322_342247929_1small.jpg"/> <br/> <br/>でも今日みたいな寒い日は<br/><img alt="フォト" border="0" class="photoThumbnail COMPONENT_diaryPhotoInline--small" id="photo_342247930" src="https://photoservice-imagecluster.img.mixi.jp/v/a7a7aeecf4e2b3e669c45f6b06f9d5330c86dfcb8f/67c3128d/photo/picture/774322_342247930_1small.jpg"/> <br/> <br/>こんなんで。<br/> <br/>これ見ると俺弱ってんじゃね？と軽く不安になってみたり。<br/>とりあえず風呂ですな。<br/> <br/><br/></div>
+</div>
+<ul class="actionLink01">
+<li><a class="comment JS_comment" href="#diaryCommentForm">コメント</a></li>
+</ul>
+<p class="reportLink01" style="display: none;"><!--<a href="https://mixi.jp/support_report.pl?keys=774322%3A805396561&from=https%3A%2F%2Fmixi.jp%2Fview_diary.pl%3Fid%3D805396561%26owner_id%3D774322&type=diary"><img width="80" height="24" alt="通報する" src="https://img.mixi.net/img/basic/button/report001.gif" /></a> --></p>
+<div class="DIARY_isAnchor" id="feedback"></div>
+<dl class="iineList JS_iineList" style="display:none;">
+<dt>イイネ！<span class="total">（<a href="javascript:void(0);" id="feedbackMemberListButton">0</a>）</span></dt>
+</dl>
+<!--/viewDiaryBox--></div></div>
+    <div class="diary-footer">
+        <p>Exported from mixi.jp on 2025-03-01 23:29:32</p>
+        <p>Original URL: <a href="https://mixi.jp/view_diary.pl?id=805396561&owner_id=774322">https://mixi.jp/view_diary.pl?id=805396561&owner_id=774322</a></p>
+    </div>
+</body>
+</html>
