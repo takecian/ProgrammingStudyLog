@@ -1,0 +1,14 @@
+{
+  "practice_sessions": [],
+  "statistics": {
+    "total_sessions": 0,
+    "total_time_seconds": 0,
+    "average_solve_time": 0,
+    "success_rate": 0,
+    "problems_by_difficulty": {
+      "Easy": 0,
+      "Medium": 0,
+      "Hard": 0
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "user_progress": {
+    "patterns": {
+      "Two Pointers": 0,
+      "Sliding Window": 0,
+      "Fast & Slow Pointers": 0,
+      "Merge Intervals": 0,
+      "Tree Breadth First Search": 0,
+      "Tree Depth First Search": 0,
+      "Dynamic Programming": 0,
+      "Graph Traversal": 0
+    },
+    "last_updated": null,
+    "total_problems_solved": 0
+  }
+}

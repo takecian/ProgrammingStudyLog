@@ -1,0 +1,161 @@
+{
+  "patterns": {
+    "Two Pointers": {
+      "description": "Use two pointers to traverse data structures efficiently",
+      "difficulty": "Easy",
+      "common_problems": [
+        "Two Sum",
+        "Remove Duplicates from Sorted Array",
+        "Container With Most Water",
+        "3Sum"
+      ],
+      "key_concepts": [
+        "Left and right pointers",
+        "Fast and slow pointers",
+        "Opposite direction traversal",
+        "Same direction traversal"
+      ],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)"
+    },
+    "Sliding Window": {
+      "description": "Use a window that slides over the data to find optimal solutions",
+      "difficulty": "Easy",
+      "common_problems": [
+        "Maximum Sum Subarray of Size K",
+        "Longest Substring Without Repeating Characters",
+        "Minimum Window Substring",
+        "Permutation in String"
+      ],
+      "key_concepts": [
+        "Fixed size window",
+        "Variable size window",
+        "Window expansion and contraction",
+        "Optimal subarray/substring"
+      ],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(k)"
+    },
+    "Fast & Slow Pointers": {
+      "description": "Use two pointers moving at different speeds to detect cycles",
+      "difficulty": "Medium",
+      "common_problems": [
+        "Linked List Cycle",
+        "Find the Duplicate Number",
+        "Happy Number",
+        "Middle of the Linked List"
+      ],
+      "key_concepts": [
+        "Floyd's cycle detection",
+        "Tortoise and hare algorithm",
+        "Cycle detection in linked lists",
+        "Finding cycle start"
+      ],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)"
+    },
+    "Merge Intervals": {
+      "description": "Deal with overlapping intervals efficiently",
+      "difficulty": "Medium",
+      "common_problems": [
+        "Merge Intervals",
+        "Insert Interval",
+        "Meeting Rooms",
+        "Non-overlapping Intervals"
+      ],
+      "key_concepts": [
+        "Interval sorting",
+        "Overlap detection",
+        "Interval merging",
+        "Conflict resolution"
+      ],
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)"
+    },
+    "Tree Breadth First Search": {
+      "description": "Traverse trees level by level using BFS",
+      "difficulty": "Easy",
+      "common_problems": [
+        "Binary Tree Level Order Traversal",
+        "Minimum Depth of Binary Tree",
+        "Level Averages in a Binary Tree",
+        "Binary Tree Zigzag Level Order Traversal"
+      ],
+      "key_concepts": [
+        "Level-order traversal",
+        "Queue-based traversal",
+        "Level-by-level processing",
+        "Tree width and depth"
+      ],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(w)"
+    },
+    "Tree Depth First Search": {
+      "description": "Traverse trees using DFS with recursion or stack",
+      "difficulty": "Easy",
+      "common_problems": [
+        "Binary Tree Path Sum",
+        "All Paths for a Sum",
+        "Sum of Path Numbers",
+        "Path With Given Sequence"
+      ],
+      "key_concepts": [
+        "Preorder traversal",
+        "Inorder traversal",
+        "Postorder traversal",
+        "Path tracking and backtracking"
+      ],
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)"
+    },
+    "Dynamic Programming": {
+      "description": "Solve problems by breaking them into overlapping subproblems",
+      "difficulty": "Hard",
+      "common_problems": [
+        "Fibonacci Number",
+        "Climbing Stairs",
+        "House Robber",
+        "Longest Common Subsequence",
+        "0/1 Knapsack"
+      ],
+      "key_concepts": [
+        "Memoization",
+        "Tabulation",
+        "State transition",
+        "Optimal substructure",
+        "Overlapping subproblems"
+      ],
+      "time_complexity": "O(n*m)",
+      "space_complexity": "O(n*m)"
+    },
+    "Graph Traversal": {
+      "description": "Traverse and search graphs using DFS and BFS",
+      "difficulty": "Medium",
+      "common_problems": [
+        "Number of Islands",
+        "Clone Graph",
+        "Course Schedule",
+        "Word Ladder"
+      ],
+      "key_concepts": [
+        "Adjacency list representation",
+        "Visited tracking",
+        "DFS and BFS on graphs",
+        "Cycle detection",
+        "Topological sorting"
+      ],
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)"
+    }
+  },
+  "learning_order": [
+    "Two Pointers",
+    "Sliding Window",
+    "Tree Breadth First Search",
+    "Tree Depth First Search",
+    "Fast & Slow Pointers",
+    "Merge Intervals",
+    "Graph Traversal",
+    "Dynamic Programming"
+  ]
+}

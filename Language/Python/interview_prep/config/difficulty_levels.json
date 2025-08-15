@@ -1,0 +1,92 @@
+{
+  "difficulty_levels": {
+    "Easy": {
+      "description": "Fundamental problems that test basic programming concepts",
+      "characteristics": [
+        "Single concept application",
+        "Straightforward implementation",
+        "Clear problem statement",
+        "Limited edge cases"
+      ],
+      "time_limit_minutes": 20,
+      "expected_solve_rate": 80,
+      "patterns": [
+        "Two Pointers",
+        "Sliding Window",
+        "Tree Breadth First Search",
+        "Tree Depth First Search"
+      ],
+      "python_techniques": [
+        "Basic loops and conditionals",
+        "List comprehensions",
+        "Built-in functions (len, sum, max, min)",
+        "String methods"
+      ]
+    },
+    "Medium": {
+      "description": "Problems requiring combination of concepts and optimization",
+      "characteristics": [
+        "Multiple concept combination",
+        "Optimization required",
+        "Complex edge cases",
+        "Multiple solution approaches"
+      ],
+      "time_limit_minutes": 35,
+      "expected_solve_rate": 60,
+      "patterns": [
+        "Fast & Slow Pointers",
+        "Merge Intervals",
+        "Graph Traversal",
+        "Modified Binary Search",
+        "Two Heaps"
+      ],
+      "python_techniques": [
+        "Collections module (defaultdict, Counter, deque)",
+        "Heapq for priority queues",
+        "Set operations",
+        "Dictionary comprehensions"
+      ]
+    },
+    "Hard": {
+      "description": "Complex problems requiring advanced algorithms and data structures",
+      "characteristics": [
+        "Advanced algorithm knowledge",
+        "Complex state management",
+        "Multiple optimization levels",
+        "Intricate edge case handling"
+      ],
+      "time_limit_minutes": 45,
+      "expected_solve_rate": 30,
+      "patterns": [
+        "Dynamic Programming",
+        "Topological Sort",
+        "System Design",
+        "Advanced Graph Algorithms"
+      ],
+      "python_techniques": [
+        "Advanced data structures",
+        "Memoization and caching",
+        "Bit manipulation",
+        "Mathematical algorithms"
+      ]
+    }
+  },
+  "progression_criteria": {
+    "easy_to_medium": {
+      "min_problems_solved": 20,
+      "min_success_rate": 75,
+      "required_patterns": ["Two Pointers", "Sliding Window", "Tree BFS", "Tree DFS"]
+    },
+    "medium_to_hard": {
+      "min_problems_solved": 40,
+      "min_success_rate": 65,
+      "required_patterns": ["Fast & Slow Pointers", "Merge Intervals", "Graph Traversal"]
+    }
+  },
+  "practice_recommendations": {
+    "daily_easy": 2,
+    "daily_medium": 1,
+    "weekly_hard": 2,
+    "review_frequency_days": 7
+  }
+}

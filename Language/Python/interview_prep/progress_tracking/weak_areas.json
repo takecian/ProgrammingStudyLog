@@ -1,0 +1,17 @@
+{
+  "weak_areas": {
+    "patterns": [],
+    "concepts": [],
+    "python_techniques": []
+  },
+  "recommendations": {
+    "focus_patterns": [],
+    "suggested_problems": [],
+    "study_resources": []
+  },
+  "improvement_tracking": {
+    "previous_weak_areas": [],
+    "resolved_areas": [],
+    "last_analysis": null
+  }
+}
