@@ -13,7 +13,7 @@
   - Create `python_techniques/interview_utils.py` with utility functions for input parsing and output formatting
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [ ] 3. Create fundamental problem-solving patterns
+- [-] 3. Create fundamental problem-solving patterns
 - [ ] 3.1 Implement array and string manipulation patterns
   - Create `patterns/arrays_strings/two_pointers.py` with two-pointer technique examples and templates
   - Implement `patterns/arrays_strings/sliding_window.py` with sliding window pattern problems and solutions
