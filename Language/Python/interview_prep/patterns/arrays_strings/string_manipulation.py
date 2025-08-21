@@ -1,4 +1,5 @@
 """
+<<<<<<< HEAD
 String Manipulation Patterns for Technical Interviews
 
 This module covers essential string processing techniques commonly used in coding interviews.
@@ -14,10 +15,27 @@ Common use cases:
 """
 
 from typing import List, Dict, Set, Optional, Tuple
+=======
+String Manipulation Patterns - Common String Processing Techniques
+
+This module contains implementations of common string manipulation patterns
+frequently encountered in coding interviews.
+
+Common Use Cases:
+- String parsing and validation
+- Pattern matching and searching
+- String transformation and encoding
+- Substring operations
+- Character frequency analysis
+"""
+
+from typing import List, Dict, Set, Optional
+>>>>>>> 173ecd5 (wip)
 from collections import Counter, defaultdict
 import re
 
 
+<<<<<<< HEAD
 class StringManipulationPatterns:
     """Collection of string manipulation patterns and techniques."""
     
@@ -484,4 +502,487 @@ String Manipulation Interview Tips:
    - Clarify input constraints
    - Consider space/time trade-offs
    - Use appropriate data structures (set, dict)
+=======
+def reverse_string(s: List[str]) -> None:
+    """
+    Reverse string in-place.
+    
+    Args:
+        s: List of characters to reverse
+        
+    Time: O(n), Space: O(1)
+    """
+    left, right = 0, len(s) - 1
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+
+
+def reverse_words(s: str) -> str:
+    """
+    Reverse words in a string, handling multiple spaces.
+    
+    Args:
+        s: Input string with words separated by spaces
+        
+    Returns:
+        String with words reversed and extra spaces removed
+        
+    Time: O(n), Space: O(n)
+    """
+    # Split by whitespace and filter empty strings
+    words = [word for word in s.split() if word]
+    return ' '.join(reversed(words))
+
+
+def is_anagram(s: str, t: str) -> bool:
+    """
+    Check if two strings are anagrams.
+    
+    Args:
+        s: First string
+        t: Second string
+        
+    Returns:
+        True if strings are anagrams, False otherwise
+        
+    Time: O(n), Space: O(1) - at most 26 characters
+    """
+    if len(s) != len(t):
+        return False
+    
+    return Counter(s) == Counter(t)
+
+
+def group_anagrams(strs: List[str]) -> List[List[str]]:
+    """
+    Group strings that are anagrams of each other.
+    
+    Args:
+        strs: List of strings
+        
+    Returns:
+        List of groups, where each group contains anagrams
+        
+    Time: O(n * k log k) where k is max string length
+    Space: O(n * k)
+    """
+    anagram_groups = defaultdict(list)
+    
+    for s in strs:
+        # Use sorted string as key
+        key = ''.join(sorted(s))
+        anagram_groups[key].append(s)
+    
+    return list(anagram_groups.values())
+
+
+def longest_common_prefix(strs: List[str]) -> str:
+    """
+    Find longest common prefix among array of strings.
+    
+    Args:
+        strs: Array of strings
+        
+    Returns:
+        Longest common prefix
+        
+    Time: O(S) where S is sum of all characters
+    Space: O(1)
+    """
+    if not strs:
+        return ""
+    
+    # Find minimum length
+    min_len = min(len(s) for s in strs)
+    
+    for i in range(min_len):
+        char = strs[0][i]
+        if any(s[i] != char for s in strs):
+            return strs[0][:i]
+    
+    return strs[0][:min_len]
+
+
+def valid_palindrome(s: str) -> bool:
+    """
+    Check if string is valid palindrome (ignoring non-alphanumeric).
+    
+    Args:
+        s: Input string
+        
+    Returns:
+        True if valid palindrome, False otherwise
+        
+    Time: O(n), Space: O(1)
+    """
+    left, right = 0, len(s) - 1
+    
+    while left < right:
+        # Skip non-alphanumeric characters
+        while left < right and not s[left].isalnum():
+            left += 1
+        while left < right and not s[right].isalnum():
+            right -= 1
+        
+        # Compare characters (case insensitive)
+        if s[left].lower() != s[right].lower():
+            return False
+        
+        left += 1
+        right -= 1
+    
+    return True
+
+
+def string_to_integer(s: str) -> int:
+    """
+    Convert string to integer (atoi implementation).
+    
+    Args:
+        s: String representation of integer
+        
+    Returns:
+        Integer value, clamped to 32-bit signed integer range
+        
+    Time: O(n), Space: O(1)
+    """
+    if not s:
+        return 0
+    
+    # Remove leading whitespace
+    s = s.lstrip()
+    if not s:
+        return 0
+    
+    # Check sign
+    sign = 1
+    start = 0
+    if s[0] in ['+', '-']:
+        sign = -1 if s[0] == '-' else 1
+        start = 1
+    
+    # Convert digits
+    result = 0
+    for i in range(start, len(s)):
+        if not s[i].isdigit():
+            break
+        
+        digit = int(s[i])
+        
+        # Check for overflow
+        if result > (2**31 - 1 - digit) // 10:
+            return -2**31 if sign == -1 else 2**31 - 1
+        
+        result = result * 10 + digit
+    
+    return sign * result
+
+
+def zigzag_conversion(s: str, num_rows: int) -> str:
+    """
+    Convert string to zigzag pattern and read line by line.
+    
+    Args:
+        s: Input string
+        num_rows: Number of rows in zigzag
+        
+    Returns:
+        String read line by line from zigzag pattern
+        
+    Time: O(n), Space: O(n)
+    """
+    if num_rows == 1 or num_rows >= len(s):
+        return s
+    
+    rows = [''] * num_rows
+    current_row = 0
+    going_down = False
+    
+    for char in s:
+        rows[current_row] += char
+        
+        # Change direction at top or bottom
+        if current_row == 0 or current_row == num_rows - 1:
+            going_down = not going_down
+        
+        current_row += 1 if going_down else -1
+    
+    return ''.join(rows)
+
+
+def longest_palindromic_substring(s: str) -> str:
+    """
+    Find longest palindromic substring.
+    
+    Args:
+        s: Input string
+        
+    Returns:
+        Longest palindromic substring
+        
+    Time: O(n²), Space: O(1)
+    """
+    if not s:
+        return ""
+    
+    start = 0
+    max_len = 1
+    
+    def expand_around_center(left: int, right: int) -> int:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return right - left - 1
+    
+    for i in range(len(s)):
+        # Check for odd-length palindromes
+        len1 = expand_around_center(i, i)
+        # Check for even-length palindromes
+        len2 = expand_around_center(i, i + 1)
+        
+        current_max = max(len1, len2)
+        if current_max > max_len:
+            max_len = current_max
+            start = i - (current_max - 1) // 2
+    
+    return s[start:start + max_len]
+
+
+def encode_decode_strings(strs: List[str]) -> str:
+    """
+    Encode list of strings into single string.
+    
+    Args:
+        strs: List of strings to encode
+        
+    Returns:
+        Encoded string
+        
+    Time: O(n), Space: O(n)
+    """
+    encoded = ""
+    for s in strs:
+        # Format: length + delimiter + string
+        encoded += str(len(s)) + "#" + s
+    return encoded
+
+
+def decode_strings(encoded: str) -> List[str]:
+    """
+    Decode string back to list of strings.
+    
+    Args:
+        encoded: Encoded string
+        
+    Returns:
+        List of decoded strings
+        
+    Time: O(n), Space: O(n)
+    """
+    decoded = []
+    i = 0
+    
+    while i < len(encoded):
+        # Find delimiter
+        delimiter_pos = encoded.find('#', i)
+        length = int(encoded[i:delimiter_pos])
+        
+        # Extract string
+        start = delimiter_pos + 1
+        decoded.append(encoded[start:start + length])
+        
+        i = start + length
+    
+    return decoded
+
+
+def multiply_strings(num1: str, num2: str) -> str:
+    """
+    Multiply two non-negative integers represented as strings.
+    
+    Args:
+        num1: First number as string
+        num2: Second number as string
+        
+    Returns:
+        Product as string
+        
+    Time: O(m * n), Space: O(m + n)
+    """
+    if num1 == "0" or num2 == "0":
+        return "0"
+    
+    m, n = len(num1), len(num2)
+    result = [0] * (m + n)
+    
+    # Reverse both numbers for easier calculation
+    num1, num2 = num1[::-1], num2[::-1]
+    
+    for i in range(m):
+        for j in range(n):
+            # Multiply digits
+            product = int(num1[i]) * int(num2[j])
+            
+            # Add to result
+            result[i + j] += product
+            
+            # Handle carry
+            result[i + j + 1] += result[i + j] // 10
+            result[i + j] %= 10
+    
+    # Remove leading zeros and reverse
+    while len(result) > 1 and result[-1] == 0:
+        result.pop()
+    
+    return ''.join(map(str, result[::-1]))
+
+
+def word_pattern(pattern: str, s: str) -> bool:
+    """
+    Check if string follows given pattern.
+    
+    Args:
+        pattern: Pattern string (e.g., "abba")
+        s: String to check (e.g., "dog cat cat dog")
+        
+    Returns:
+        True if string follows pattern, False otherwise
+        
+    Time: O(n), Space: O(n)
+    """
+    words = s.split()
+    
+    if len(pattern) != len(words):
+        return False
+    
+    char_to_word = {}
+    word_to_char = {}
+    
+    for char, word in zip(pattern, words):
+        # Check char -> word mapping
+        if char in char_to_word:
+            if char_to_word[char] != word:
+                return False
+        else:
+            char_to_word[char] = word
+        
+        # Check word -> char mapping
+        if word in word_to_char:
+            if word_to_char[word] != char:
+                return False
+        else:
+            word_to_char[word] = char
+    
+    return True
+
+
+def simplify_path(path: str) -> str:
+    """
+    Simplify Unix-style file path.
+    
+    Args:
+        path: Unix file path
+        
+    Returns:
+        Simplified canonical path
+        
+    Time: O(n), Space: O(n)
+    """
+    stack = []
+    components = path.split('/')
+    
+    for component in components:
+        if component == '' or component == '.':
+            # Skip empty and current directory
+            continue
+        elif component == '..':
+            # Go to parent directory
+            if stack:
+                stack.pop()
+        else:
+            # Regular directory name
+            stack.append(component)
+    
+    return '/' + '/'.join(stack)
+
+
+# Python String Utilities for Interviews
+def string_utilities():
+    """
+    Common Python string methods useful in interviews.
+    """
+    examples = {
+        # Basic operations
+        'split': "hello world".split(),  # ['hello', 'world']
+        'join': " ".join(['hello', 'world']),  # 'hello world'
+        'strip': "  hello  ".strip(),  # 'hello'
+        
+        # Case operations
+        'lower': "Hello".lower(),  # 'hello'
+        'upper': "hello".upper(),  # 'HELLO'
+        'title': "hello world".title(),  # 'Hello World'
+        
+        # Character checks
+        'isalnum': "abc123".isalnum(),  # True
+        'isdigit': "123".isdigit(),  # True
+        'isalpha': "abc".isalpha(),  # True
+        
+        # Search operations
+        'find': "hello".find('l'),  # 2 (first occurrence)
+        'count': "hello".count('l'),  # 2
+        'startswith': "hello".startswith('he'),  # True
+        'endswith': "hello".endswith('lo'),  # True
+        
+        # Replace operations
+        'replace': "hello".replace('l', 'x'),  # 'hexxo'
+        
+        # Formatting
+        'format': "Hello {}".format("world"),  # 'Hello world'
+        'f_string': f"Hello {'world'}",  # 'Hello world'
+    }
+    return examples
+
+
+# Interview Tips and Common Patterns
+"""
+String Manipulation Interview Tips:
+
+1. **Python String Advantages**:
+   - Rich built-in methods (split, join, strip, etc.)
+   - Easy character iteration and slicing
+   - Powerful string formatting options
+   - Regular expression support
+
+2. **Common Patterns**:
+   - Two pointers for palindromes and reversals
+   - Hash maps for character frequency
+   - Stack for parentheses and path problems
+   - Sliding window for substring problems
+
+3. **Key Techniques**:
+   - Use collections.Counter for frequency counting
+   - Leverage string methods like split() and join()
+   - Consider ASCII values for character operations
+   - Use enumerate() for index tracking
+
+4. **Performance Considerations**:
+   - Strings are immutable in Python
+   - Use list for character manipulation, join for result
+   - StringBuilder pattern: chars = []; chars.append(c); ''.join(chars)
+   - Avoid repeated string concatenation in loops
+
+5. **Common Mistakes**:
+   - Forgetting string immutability
+   - Not handling edge cases (empty strings, single characters)
+   - Case sensitivity issues
+   - Unicode vs ASCII considerations
+
+6. **Useful Built-ins**:
+   - ord(c): character to ASCII
+   - chr(n): ASCII to character
+   - str.translate(): character mapping
+   - re module for complex pattern matching
+>>>>>>> 173ecd5 (wip)
 """

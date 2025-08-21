@@ -13,22 +13,22 @@
   - Create `python_techniques/interview_utils.py` with utility functions for input parsing and output formatting
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [-] 3. Create fundamental problem-solving patterns
-- [ ] 3.1 Implement array and string manipulation patterns
+- [x] 3. Create fundamental problem-solving patterns
+- [x] 3.1 Implement array and string manipulation patterns
   - Create `patterns/arrays_strings/two_pointers.py` with two-pointer technique examples and templates
   - Implement `patterns/arrays_strings/sliding_window.py` with sliding window pattern problems and solutions
   - Build `patterns/arrays_strings/string_manipulation.py` with common string processing techniques
   - Write unit tests for each pattern implementation
   - _Requirements: 2.1, 2.2, 1.4_
 
-- [ ] 3.2 Implement linked list patterns
+- [x] 3.2 Implement linked list patterns
   - Create `patterns/linked_lists/basic_operations.py` with linked list traversal and manipulation
   - Implement `patterns/linked_lists/two_pointers.py` with fast/slow pointer techniques
   - Build `patterns/linked_lists/reversal.py` with list reversal patterns
   - Write comprehensive tests for linked list operations
   - _Requirements: 2.1, 2.2_
 
-- [ ] 3.3 Implement tree and graph patterns
+- [x] 3.3 Implement tree and graph patterns
   - Create `patterns/trees_graphs/tree_traversal.py` with DFS/BFS implementations and variations
   - Implement `patterns/trees_graphs/binary_search_tree.py` with BST operations and properties
   - Build `patterns/trees_graphs/graph_algorithms.py` with graph traversal and pathfinding

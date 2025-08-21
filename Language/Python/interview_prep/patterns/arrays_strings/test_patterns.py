@@ -1,6 +1,7 @@
 """
 Unit tests for array and string manipulation patterns.
 
+<<<<<<< HEAD
 These tests verify the correctness of pattern implementations and serve as
 examples of how to use each pattern in different scenarios.
 """
@@ -370,3 +371,213 @@ class TestAdvancedStringPatterns(unittest.TestCase):
 if __name__ == '__main__':
     # Run all tests
     unittest.main(verbosity=2)
+=======
+Run with: python -m pytest test_patterns.py -v
+"""
+
+import pytest
+from two_pointers import (
+    two_sum_sorted, is_palindrome, remove_duplicates, 
+    container_with_most_water, three_sum, sort_colors,
+    reverse_words_in_string
+)
+from sliding_window import (
+    max_sum_subarray_size_k, longest_substring_without_repeating,
+    longest_substring_k_distinct, min_window_substring,
+    subarray_sum_equals_k, max_consecutive_ones_k_flips,
+    character_replacement, find_all_anagrams
+)
+from string_manipulation import (
+    reverse_string, reverse_words, is_anagram, group_anagrams,
+    longest_common_prefix, valid_palindrome, string_to_integer,
+    zigzag_conversion, longest_palindromic_substring,
+    encode_decode_strings, decode_strings, multiply_strings,
+    word_pattern, simplify_path
+)
+
+
+class TestTwoPointers:
+    """Test cases for two-pointer techniques."""
+    
+    def test_two_sum_sorted(self):
+        assert two_sum_sorted([2, 7, 11, 15], 9) == (0, 1)
+        assert two_sum_sorted([2, 3, 4], 6) == (0, 2)
+        assert two_sum_sorted([1, 2, 3, 4], 10) is None
+        assert two_sum_sorted([], 5) is None
+    
+    def test_is_palindrome(self):
+        assert is_palindrome("A man, a plan, a canal: Panama") == True
+        assert is_palindrome("race a car") == False
+        assert is_palindrome("") == True
+        assert is_palindrome("a") == True
+    
+    def test_remove_duplicates(self):
+        nums1 = [1, 1, 2]
+        assert remove_duplicates(nums1) == 2
+        assert nums1[:2] == [1, 2]
+        
+        nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+        assert remove_duplicates(nums2) == 5
+        assert nums2[:5] == [0, 1, 2, 3, 4]
+    
+    def test_container_with_most_water(self):
+        assert container_with_most_water([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49
+        assert container_with_most_water([1, 1]) == 1
+        assert container_with_most_water([1]) == 0
+    
+    def test_three_sum(self):
+        result = three_sum([-1, 0, 1, 2, -1, -4])
+        expected = [[-1, -1, 2], [-1, 0, 1]]
+        assert sorted(result) == sorted(expected)
+        
+        assert three_sum([0, 1, 1]) == []
+        assert three_sum([0, 0, 0]) == [[0, 0, 0]]
+    
+    def test_sort_colors(self):
+        nums1 = [2, 0, 2, 1, 1, 0]
+        sort_colors(nums1)
+        assert nums1 == [0, 0, 1, 1, 2, 2]
+        
+        nums2 = [2, 0, 1]
+        sort_colors(nums2)
+        assert nums2 == [0, 1, 2]
+
+
+class TestSlidingWindow:
+    """Test cases for sliding window techniques."""
+    
+    def test_max_sum_subarray_size_k(self):
+        assert max_sum_subarray_size_k([2, 1, 5, 1, 3, 2], 3) == 9
+        assert max_sum_subarray_size_k([2, 3, 4, 1, 5], 2) == 7
+        assert max_sum_subarray_size_k([1, 2], 3) == 0
+    
+    def test_longest_substring_without_repeating(self):
+        assert longest_substring_without_repeating("abcabcbb") == 3
+        assert longest_substring_without_repeating("bbbbb") == 1
+        assert longest_substring_without_repeating("pwwkew") == 3
+        assert longest_substring_without_repeating("") == 0
+    
+    def test_longest_substring_k_distinct(self):
+        assert longest_substring_k_distinct("eceba", 2) == 3
+        assert longest_substring_k_distinct("aa", 1) == 2
+        assert longest_substring_k_distinct("abc", 0) == 0
+    
+    def test_min_window_substring(self):
+        assert min_window_substring("ADOBECODEBANC", "ABC") == "BANC"
+        assert min_window_substring("a", "a") == "a"
+        assert min_window_substring("a", "aa") == ""
+    
+    def test_subarray_sum_equals_k(self):
+        assert subarray_sum_equals_k([1, 1, 1], 2) == 2
+        assert subarray_sum_equals_k([1, 2, 3], 3) == 2
+        assert subarray_sum_equals_k([1], 0) == 0
+    
+    def test_max_consecutive_ones_k_flips(self):
+        assert max_consecutive_ones_k_flips([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2) == 6
+        assert max_consecutive_ones_k_flips([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3) == 10
+    
+    def test_character_replacement(self):
+        assert character_replacement("ABAB", 2) == 4
+        assert character_replacement("AABABBA", 1) == 4
+    
+    def test_find_all_anagrams(self):
+        assert find_all_anagrams("abab", "ab") == [0, 2]
+        assert find_all_anagrams("abcab", "ab") == [1, 3]
+        assert find_all_anagrams("abab", "ba") == [0, 1, 2]
+
+
+class TestStringManipulation:
+    """Test cases for string manipulation techniques."""
+    
+    def test_reverse_string(self):
+        s1 = ["h", "e", "l", "l", "o"]
+        reverse_string(s1)
+        assert s1 == ["o", "l", "l", "e", "h"]
+        
+        s2 = ["H", "a", "n", "n", "a", "h"]
+        reverse_string(s2)
+        assert s2 == ["h", "a", "n", "n", "a", "H"]
+    
+    def test_reverse_words(self):
+        assert reverse_words("the sky is blue") == "blue is sky the"
+        assert reverse_words("  hello world  ") == "world hello"
+        assert reverse_words("a good   example") == "example good a"
+    
+    def test_is_anagram(self):
+        assert is_anagram("anagram", "nagaram") == True
+        assert is_anagram("rat", "car") == False
+        assert is_anagram("", "") == True
+    
+    def test_group_anagrams(self):
+        result = group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+        # Sort each group and the list of groups for comparison
+        result = [sorted(group) for group in result]
+        result.sort()
+        expected = [["ate", "eat", "tea"], ["bat"], ["nat", "tan"]]
+        expected = [sorted(group) for group in expected]
+        expected.sort()
+        assert result == expected
+    
+    def test_longest_common_prefix(self):
+        assert longest_common_prefix(["flower", "flow", "flight"]) == "fl"
+        assert longest_common_prefix(["dog", "racecar", "car"]) == ""
+        assert longest_common_prefix(["interspecies", "interstellar", "interstate"]) == "inters"
+    
+    def test_valid_palindrome(self):
+        assert valid_palindrome("A man, a plan, a canal: Panama") == True
+        assert valid_palindrome("race a car") == False
+        assert valid_palindrome("") == True
+    
+    def test_string_to_integer(self):
+        assert string_to_integer("42") == 42
+        assert string_to_integer("   -42") == -42
+        assert string_to_integer("4193 with words") == 4193
+        assert string_to_integer("words and 987") == 0
+        assert string_to_integer("-91283472332") == -2147483648  # 32-bit overflow
+    
+    def test_zigzag_conversion(self):
+        assert zigzag_conversion("PAYPALISHIRING", 3) == "PAHNAPLSIIGYIR"
+        assert zigzag_conversion("PAYPALISHIRING", 4) == "PINALSIGYAHRPI"
+        assert zigzag_conversion("A", 1) == "A"
+    
+    def test_longest_palindromic_substring(self):
+        assert longest_palindromic_substring("babad") in ["bab", "aba"]
+        assert longest_palindromic_substring("cbbd") == "bb"
+        assert longest_palindromic_substring("a") == "a"
+        assert longest_palindromic_substring("ac") in ["a", "c"]
+    
+    def test_encode_decode_strings(self):
+        strs = ["lint", "code", "love", "you"]
+        encoded = encode_decode_strings(strs)
+        decoded = decode_strings(encoded)
+        assert decoded == strs
+        
+        # Test with empty strings
+        strs2 = ["", "a", ""]
+        encoded2 = encode_decode_strings(strs2)
+        decoded2 = decode_strings(encoded2)
+        assert decoded2 == strs2
+    
+    def test_multiply_strings(self):
+        assert multiply_strings("2", "3") == "6"
+        assert multiply_strings("123", "456") == "56088"
+        assert multiply_strings("0", "0") == "0"
+        assert multiply_strings("9", "9") == "81"
+    
+    def test_word_pattern(self):
+        assert word_pattern("abba", "dog cat cat dog") == True
+        assert word_pattern("abba", "dog cat cat fish") == False
+        assert word_pattern("aaaa", "dog cat cat dog") == False
+        assert word_pattern("abba", "dog dog dog dog") == False
+    
+    def test_simplify_path(self):
+        assert simplify_path("/home/") == "/home"
+        assert simplify_path("/../") == "/"
+        assert simplify_path("/home//foo/") == "/home/foo"
+        assert simplify_path("/a/./b/../../c/") == "/c"
+
+
+if __name__ == "__main__":
+    # Run tests if script is executed directly
+    pytest.main([__file__, "-v"])
+>>>>>>> 173ecd5 (wip)
